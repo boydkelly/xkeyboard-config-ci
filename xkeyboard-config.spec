@@ -7,7 +7,7 @@
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
 Version:    2.24
-Release:    1%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Release:    6%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
@@ -19,8 +19,8 @@ Source2:    commitid
 Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
 %endif
 
-# Submitted upstream
-Patch1:     0001-ci-keyboard.patch
+Patch1:	    0001-ci-xkeyboard-config.patch
+
 
 BuildArch:  noarch
 
@@ -91,6 +91,20 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
+* Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 2.24-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
+* Fri Jul 06 2018 Peter Hutterer <peter.hutterer@redhat.com> 2.24-3
+- Remove high-keycode removal patches, xkbcomp 1.4.2 has been in stable for
+  long enough (related #1587998)
+
+* Thu Jun 07 2018 Peter Hutterer <peter.hutterer@redhat.com> 2.24-2
+- Revert two high keycode mappings, xkbcomp fails to parse those.
+  (#1587998)
+
+* Tue Jun 05 2018 Peter Hutterer <peter.hutterer@redhat.com> 2.24-1
+- xkeyboard-config 2.24
+
 * Wed Feb 07 2018 Peter Hutterer <peter.hutterer@redhat.com> 2.23.1-1
 - Fix typo in polish keyboard layout
 - xkeyboard-config 2.23.1
