@@ -16,10 +16,10 @@ Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
+Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
 %endif
 
-Patch1:	    0001-ci-xkeyboard-config.patch
+Patch1:     0001-ci-xkeyboard-config.patch
 
 
 BuildArch:  noarch
