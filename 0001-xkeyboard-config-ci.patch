@@ -1,34 +1,45 @@
 diff -Npru a/po/fr.po b/po/fr.po
 --- a/po/fr.po	2018-06-04 22:36:12.000000000 +0000
-+++ b/po/fr.po	2018-09-07 17:01:34.711731430 +0000
-@@ -1483,6 +1483,27 @@ msgstr "Cameroun multilingue (Dvorak)"
++++ b/po/fr.po	2018-09-08 15:27:04.410392160 +0000
+@@ -1,4 +1,4 @@
+-# Messages français pour GNU concernant xfree86_xkb_xml.
++
+ # Copyright © 2004 Free Software Foundation, Inc.
+ # This file is distributed under the same license as the xkeyboard-config package.
+ # Michel Robitaille <robitail@IRO.UMontreal.CA>, traducteur depuis/since 1996.
+@@ -1483,6 +1483,7 @@ msgstr "Cameroun multilingue (Dvorak)"
  msgid "Mmuock"
  msgstr "M'mock"
  
 +
+ #. Keyboard indicator for Burmese layouts
+ #: ../rules/base.xml.in.h:385
+ msgid "my"
+@@ -4286,6 +4287,24 @@ msgstr "Séquence de touches pour tuer l
+ msgid "Ctrl+Alt+Backspace"
+ msgstr "Ctrl+Alt+Eff. arrière"
+ 
 +#. Keyboard indicator for Côte d'Ivoire layouts
-+#: ../rules/base.xml.in.h:377 ../rules/base.extras.xml.in.h:183
++#: ../rules/base.xml.in.h:377 ../rules/base.extras.xml.in.h:1117
 +msgid "ci"
 +msgstr "ci"
 +
 +# https://secure.wikimedia.org/wikipedia/fr/wiki/Côte d'Ivoire
-+#: ../rules/base.xml.in.h:379
++#: ../rules/base.xml.in.h:1118
 +msgid "French (Côte d'Ivoire)"
 +msgstr "Français (Côte d'Ivoire)"
 +
-+#: ../rules/base.xml.in.h:380
++#: ../rules/base.xml.in.h:1119
 +msgid "Côte d'Ivoire Multilingual"
 +msgstr "Côte d'Ivoire multilingue"
 +
-+#: ../rules/base.xml.in.h:381
++#: ../rules/base.xml.in.h:1120
 +msgid "Côte d'Ivoire Multilingual (QWERTY)"
 +msgstr "Côte d'Ivoire multilingue (qwerty)"
 +
-+
-+
- #. Keyboard indicator for Burmese layouts
- #: ../rules/base.xml.in.h:385
- msgid "my"
+ #: ../rules/base.extras.xml.in.h:1
+ msgid "apl"
+ msgstr "apl"
 diff -Npru a/rules/base.xml.in b/rules/base.xml.in
 --- a/rules/base.xml.in	2018-06-04 22:36:13.000000000 +0000
 +++ b/rules/base.xml.in	2018-09-07 16:40:17.148539652 +0000
@@ -129,15 +140,13 @@ diff -Npru a/rules/evdev.xml.in b/rules/evdev.xml.in
      <group allowMultipleSelection="true">
 diff -Npru a/symbols/ci b/symbols/ci
 --- a/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ b/symbols/ci	2018-09-07 16:46:35.883206282 +0000
-@@ -0,0 +1,87 @@
-+default partial alphanumeric_keys
++++ b/symbols/ci	2018-09-08 15:09:45.144004121 +0000
+@@ -0,0 +1,82 @@
++default partial 
 +xkb_symbols "basic" {
 +    include "fr(azerty)"
-+
-+    name[Group1]="French (Côte d'Ivoire)";
-+
 +    include "level3(ralt_switch)" 
++    name[Group1]="French (Côte d'Ivoire)";
 +
 +};
 +
@@ -146,9 +155,7 @@ diff -Npru a/symbols/ci b/symbols/ci
 +    include "ci(basic)"
 +    include "level3(ralt_switch)" 
 +    include "ci(exclamation_switch)"
-+
 +    name[Group1]= "Côte d'Ivoire (Multilingual)";
-+
 +
 +             // Second row
 +             key <AD02>	{ [	z,		Z,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
@@ -179,7 +186,6 @@ diff -Npru a/symbols/ci b/symbols/ci
 +    include "us"
 +    include "level3(ralt_switch)" 
 +    include "ci(semicolon_switch)"
-+
 +    name[Group1]= "Côte d'Ivoire (Qwerty multilingue)";
 +
 +
