@@ -158,7 +158,7 @@ diff -Npru a/rules/evdev.xml.in b/rules/evdev.xml.in
      <group allowMultipleSelection="true">
 diff -Npru a/symbols/ci b/symbols/ci
 --- a/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ b/symbols/ci	2018-09-11 11:33:59.121560012 +0000
++++ b/symbols/ci	2018-09-11 12:30:28.526379428 +0000
 @@ -0,0 +1,92 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
@@ -176,7 +176,7 @@ diff -Npru a/symbols/ci b/symbols/ci
 +    name[Group1]= "Côte d'Ivoire (Multilingual)";
 +
 +    	     // First row
-+             key <TLDE>	{ [    asciitilde,     twosuperior,    U0304 ]	};
++             key <TLDE>	{ [    asciitilde,     twosuperior,    U030C ]	};
 +             key <AE02>	{ [    eacute,         2,   	 U0301,    oneeighth ]	};
 +             key <AE04>	{ [apostrophe,         4,        U2018,       braceleft ]	};
 +             key <AE07>	{ [    egrave,          7,        U0300, seveneighths ]	};
@@ -228,7 +228,7 @@ diff -Npru a/symbols/ci b/symbols/ci
 +             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
 +             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
 +             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
-+             key <AB08>	{ [    comma, apostrophe,    U0304 ]	};
++             key <AB08>	{ [    comma, apostrophe,    U030C ]	};
 +             key <AB10>	{ [    eacute,     Eacute,   U0301 ]	};
 +
 +             key <AC11>	{ [    dead_grave,      dead_grave,     braceleft,      U2018 ]	};
