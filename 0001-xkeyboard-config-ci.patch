@@ -42,8 +42,8 @@ diff -Npru a/po/fr.po b/po/fr.po
  msgstr "apl"
 diff -Npru a/rules/base.xml.in b/rules/base.xml.in
 --- a/rules/base.xml.in	2018-06-04 22:36:13.000000000 +0000
-+++ b/rules/base.xml.in	2018-09-07 16:40:17.148539652 +0000
-@@ -6082,6 +6082,45 @@
++++ b/rules/base.xml.in	2018-09-11 12:14:15.301853987 +0000
+@@ -6082,6 +6082,54 @@
         </variant>
        </variantList>
      </layout>
@@ -65,9 +65,12 @@ diff -Npru a/rules/base.xml.in b/rules/base.xml.in
 +            <languageList>
 +              <iso639Id>ata</iso639Id>
 +              <iso639Id>ati</iso639Id>
++              <iso639Id>bm</iso639Id>
 +              <iso639Id>bci</iso639Id>
++              <iso639Id>btg</iso639Id>
 +              <iso639Id>dyu</iso639Id>
 +              <iso639Id>fra</iso639Id>
++              <iso639Id>gxx</iso639Id>
 +              <iso639Id>sef</iso639Id>
 +            </languageList>
 +          </configItem>
@@ -78,9 +81,15 @@ diff -Npru a/rules/base.xml.in b/rules/base.xml.in
 +            <shortDescription>ciq</shortDescription>
 +            <description>Côte d'Ivoire, (Qwerty)</description>
 +            <languageList>
++              <iso639Id>ata</iso639Id>
++              <iso639Id>ati</iso639Id>
++              <iso639Id>bm</iso639Id>
 +              <iso639Id>bci</iso639Id>
++              <iso639Id>btg</iso639Id>
 +              <iso639Id>dyu</iso639Id>
 +              <iso639Id>fra</iso639Id>
++              <iso639Id>gxx</iso639Id>
++              <iso639Id>sef</iso639Id>
 +            </languageList>
 +          </configItem>
 +        </variant>
@@ -91,8 +100,8 @@ diff -Npru a/rules/base.xml.in b/rules/base.xml.in
      <group allowMultipleSelection="true">
 diff -Npru a/rules/evdev.xml.in b/rules/evdev.xml.in
 --- a/rules/evdev.xml.in	2018-06-04 22:36:22.000000000 +0000
-+++ b/rules/evdev.xml.in	2018-09-07 16:44:40.298791057 +0000
-@@ -6082,6 +6082,45 @@
++++ b/rules/evdev.xml.in	2018-09-11 12:12:57.270022017 +0000
+@@ -6082,6 +6082,54 @@
         </variant>
        </variantList>
      </layout>
@@ -114,9 +123,12 @@ diff -Npru a/rules/evdev.xml.in b/rules/evdev.xml.in
 +            <languageList>
 +              <iso639Id>ata</iso639Id>
 +              <iso639Id>ati</iso639Id>
++              <iso639Id>bm</iso639Id>
 +              <iso639Id>bci</iso639Id>
++              <iso639Id>btg</iso639Id>
 +              <iso639Id>dyu</iso639Id>
 +              <iso639Id>fra</iso639Id>
++              <iso639Id>gxx</iso639Id>
 +              <iso639Id>sef</iso639Id>
 +            </languageList>
 +          </configItem>
@@ -127,9 +139,15 @@ diff -Npru a/rules/evdev.xml.in b/rules/evdev.xml.in
 +            <shortDescription>ciq</shortDescription>
 +            <description>Côte d'Ivoire, (Qwerty)</description>
 +            <languageList>
++              <iso639Id>ata</iso639Id>
++              <iso639Id>ati</iso639Id>
++              <iso639Id>bm</iso639Id>
 +              <iso639Id>bci</iso639Id>
++              <iso639Id>btg</iso639Id>
 +              <iso639Id>dyu</iso639Id>
 +              <iso639Id>fra</iso639Id>
++              <iso639Id>gxx</iso639Id>
++              <iso639Id>sef</iso639Id>
 +            </languageList>
 +          </configItem>
 +        </variant>
@@ -140,9 +158,105 @@ diff -Npru a/rules/evdev.xml.in b/rules/evdev.xml.in
      <group allowMultipleSelection="true">
 diff -Npru a/symbols/ci b/symbols/ci
 --- a/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ b/symbols/ci	2018-09-08 15:09:45.144004121 +0000
-@@ -0,0 +1,82 @@
-+default partial 
++++ b/symbols/ci	2018-09-11 11:33:59.121560012 +0000
+@@ -0,0 +1,92 @@
++default partial alphanumeric_keys
++xkb_symbols "basic" {
++    include "fr(azerty)"
++    include "level3(ralt_switch)" 
++    name[Group1]="French (Côte d'Ivoire)";
++
++};
++
++partial alphanumeric_keys
++xkb_symbols "civ" {
++    include "ci(basic)"
++    include "level3(ralt_switch)" 
++    include "ci(exclamation_switch)"
++    name[Group1]= "Côte d'Ivoire (Multilingual)";
++
++    	     // First row
++             key <TLDE>	{ [    asciitilde,     twosuperior,    U0304 ]	};
++             key <AE02>	{ [    eacute,         2,   	 U0301,    oneeighth ]	};
++             key <AE04>	{ [apostrophe,         4,        U2018,       braceleft ]	};
++             key <AE07>	{ [    egrave,          7,        U0300, seveneighths ]	};
++    	    key <AE12>	{ [     equal,       plus,   U2019,  braceright ]	};
++
++             // Second row
++             key <AD03>	{ [	e,		E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
++             key <AD06>	{ [	y,		Y,		U01B4,		U01B3	] };	// U0272 =   (small), U019D =   (capital)
++             key <AD07>	{ [	u,		U,		U028B,		U01B2	] };	// U0272 =   (small), U019D =   (capital)
++             key <AD08>	{ [	i,		I,		U0269,		U0196	] };	// U0272 =   (small), U0196 =   (capital)
++             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
++
++             // Third row
++	     key <AC03> { [     d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
++             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
++             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
++
++             // Fourth row
++             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
++             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
++             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
++             key <AB07>	{ [	comma,		question,	U0242,		U0241	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
++
++};
++
++partial alphanumeric_keys
++xkb_symbols "civ_qw" {
++    include "ca(fr)"
++    include "level3(ralt_switch)" 
++    include "ci(semicolon_switch)"
++
++    name[Group1]= "Côte d'Ivoire (Qwerty multilingual)";
++
++             // First row
++             key <AE06>	{ [     6,   question,       U0300 ]	};
++
++             // Second row
++             key <AD03>	{ [	e,		E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
++             key <AD06>	{ [	y,		Y,		U01B4,		U01B3	] };	// U0272 =   (small), U019D =   (capital)
++             key <AD08>	{ [	i,		I,		U0269,		U0196	] };	// U0272 =   (small), U0196 =   (capital)
++             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
++
++             // Third row
++	     key <AC03> { [     d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
++             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
++             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
++
++             // Fourth row
++             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
++             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
++             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
++             key <AB08>	{ [    comma, apostrophe,    U0304 ]	};
++             key <AB10>	{ [    eacute,     Eacute,   U0301 ]	};
++
++             key <AC11>	{ [    dead_grave,      dead_grave,     braceleft,      U2018 ]	};
++             key <BKSL>	{ [    less,            greater,        braceright,     U2019 ]	};
++
++};
++
++partial modifier_keys
++xkb_symbols "semicolon_switch" {
++    key <AC10> {
++    symbols[Group1] = [ ISO_Level3_Latch,	colon,	semicolon,	colon ] 
++    };
++    modifier_map Mod5	{ ISO_Level3_Latch };
++};
++
++partial modifier_keys
++xkb_symbols "exclamation_switch" {
++    key <AB10> {
++    symbols[Group1] = [ ISO_Level3_Latch,   U00A7,  exclam, U00A7 ]
++    };
++    modifier_map Mod5       { ISO_Level3_Latch };
++};
++
+diff -Npru a/symbols/ci.bak b/symbols/ci.bak
+--- a/symbols/ci.bak	1970-01-01 00:00:00.000000000 +0000
++++ b/symbols/ci.bak	2018-09-08 18:03:27.466085386 +0000
+@@ -0,0 +1,74 @@
++default partial alphanumeric_keys
 +xkb_symbols "basic" {
 +    include "fr(azerty)"
 +    include "level3(ralt_switch)" 
@@ -177,9 +291,7 @@ diff -Npru a/symbols/ci b/symbols/ci
 +             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
 +             key <AB07>	{ [	comma,		question,	U0242,		U0241	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
 +
-+
 +};
-+
 +
 +partial alphanumeric_keys
 +xkb_symbols "civ_qw" {
@@ -188,25 +300,20 @@ diff -Npru a/symbols/ci b/symbols/ci
 +    include "ci(semicolon_switch)"
 +    name[Group1]= "Côte d'Ivoire (Qwerty multilingue)";
 +
-+
 +             // Second row
 +             key <AD03>	{ [	e,		E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
 +             key <AD06>	{ [	y,		Y,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
 +             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
 +
-+
 +             // Third row
 +             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
-+
 +
 +             // Fourth row
 +             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
 +             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
 +             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
 +
-+
 +};
-+
 +
 +partial modifier_keys
 +xkb_symbols "semicolon_switch" {
@@ -214,7 +321,6 @@ diff -Npru a/symbols/ci b/symbols/ci
 + symbols[Group1] = [ ISO_Level3_Latch,	colon,	semicolon,	colon ]};
 + modifier_map Mod5	{ ISO_Level3_Latch };
 +};
-+
 +
 +partial modifier_keys
 +xkb_symbols "exclamation_switch" {
