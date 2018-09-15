@@ -16,7 +16,7 @@ Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-2.24.tar.bz2
+Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
 %endif
 
 Patch1:     0001-xkeyboard-config-ci.patch
