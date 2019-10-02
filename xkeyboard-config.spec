@@ -6,7 +6,7 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.24
+Version:    2.26
 Release:    7%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
@@ -16,10 +16,14 @@ Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
+Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
 %endif
 
-Patch1:     0001-xkeyboard-config-ci.patch
+Patch01:    0001-evdev-inet-Fix-KEY_KEYBOARD-mapping.patch
+Patch02:    0001-Fixed-broken-pt-layout.patch
+Patch03:    0001-Map-evdev-keycode-KEY_ROTATE_LOCK_TOGGLE-to-XF86Rota.patch
+Patch04:    0001-Map-evdev-keycode-KEY_SOUND-to-XF86AudioPreset.patch
+Patch05:    0001-xkeyboard-config-ci.patch
 
 BuildArch:  noarch
 
@@ -90,6 +94,18 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
+* Wed Oct 2 2019 Boyd Kelly <bkelly@coastsystems.net> 2.26-7
+- xkeyboard-config 2.26-7, with Ivory Coast layout
+
+* Mon May 27 2019 Peter Hutterer <peter.hutterer@redhat.com> 2.26-2
+- xkeyboard-config 2.26, with sources this time
+
+* Mon May 27 2019 Peter Hutterer <peter.hutterer@redhat.com> 2.26-1
+- xkeyboard-config 2.26
+
+* Sun Feb 03 2019 Fedora Release Engineering <releng@fedoraproject.org> - 2.24-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 2.24-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
