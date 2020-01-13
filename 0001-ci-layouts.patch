@@ -1,10 +1,11 @@
-diff -urN xkeyboard-config-2.26/po/fr.po xkeyboard-config-2.26.7/po/fr.po
---- xkeyboard-config-2.26/po/fr.po	2019-02-02 19:05:06.000000000 +0000
-+++ xkeyboard-config-2.26.7/po/fr.po	2019-10-02 09:42:54.608037604 +0000
-@@ -4298,6 +4298,24 @@
+diff -urN xkeyboard-config-2.28-orig/po/fr.po xkeyboard-config-2.28/po/fr.po
+--- xkeyboard-config-2.28-orig/po/fr.po	2019-10-19 20:52:48.000000000 +0000
++++ xkeyboard-config-2.28/po/fr.po	2020-01-13 09:09:09.740158555 +0000
+@@ -4574,7 +4574,25 @@
  msgid "Ctrl+Alt+Backspace"
  msgstr "Ctrl+Alt+Eff. arrière"
  
+-#: rules/base.extras.xml:9
 +#. Keyboard indicator for Côte d'Ivoire layouts
 +#: ../rules/base.xml.in.h:377 ../rules/base.extras.xml.in.h:1117
 +msgid "ci"
@@ -23,13 +24,14 @@ diff -urN xkeyboard-config-2.26/po/fr.po xkeyboard-config-2.26.7/po/fr.po
 +msgid "Côte d'Ivoire Multilingual (QWERTY)"
 +msgstr "Côte d'Ivoire multilingue (qwerty)"
 +
- #: ../rules/base.extras.xml.in.h:1
++#: ../rules/base.extras.xml.in.h:1
  msgid "apl"
  msgstr "apl"
-diff -urN xkeyboard-config-2.26/rules/base.xml.in xkeyboard-config-2.26.7/rules/base.xml.in
---- xkeyboard-config-2.26/rules/base.xml.in	2019-02-02 19:05:06.000000000 +0000
-+++ xkeyboard-config-2.26.7/rules/base.xml.in	2019-10-02 09:46:43.050048497 +0000
-@@ -6194,6 +6194,54 @@
+ 
+diff -urN xkeyboard-config-2.28-orig/rules/base.xml xkeyboard-config-2.28/rules/base.xml
+--- xkeyboard-config-2.28-orig/rules/base.xml	2019-10-19 20:52:38.000000000 +0000
++++ xkeyboard-config-2.28/rules/base.xml	2020-01-13 09:23:05.488390588 +0000
+@@ -6300,6 +6300,54 @@
         </variant>
        </variantList>
      </layout>
@@ -84,10 +86,10 @@ diff -urN xkeyboard-config-2.26/rules/base.xml.in xkeyboard-config-2.26.7/rules/
    </layoutList>
    <optionList>
      <group allowMultipleSelection="true">
-diff -urN xkeyboard-config-2.26/rules/evdev.xml.in xkeyboard-config-2.26.7/rules/evdev.xml.in
---- xkeyboard-config-2.26/rules/evdev.xml.in	2019-02-02 19:05:13.000000000 +0000
-+++ xkeyboard-config-2.26.7/rules/evdev.xml.in	2019-10-02 09:47:50.681051722 +0000
-@@ -6194,6 +6194,54 @@
+diff -urN xkeyboard-config-2.28-orig/rules/evdev.xml xkeyboard-config-2.28/rules/evdev.xml
+--- xkeyboard-config-2.28-orig/rules/evdev.xml	2019-10-19 20:52:51.000000000 +0000
++++ xkeyboard-config-2.28/rules/evdev.xml	2020-01-13 09:27:47.920703036 +0000
+@@ -6300,6 +6300,54 @@
         </variant>
        </variantList>
      </layout>
@@ -142,9 +144,9 @@ diff -urN xkeyboard-config-2.26/rules/evdev.xml.in xkeyboard-config-2.26.7/rules
    </layoutList>
    <optionList>
      <group allowMultipleSelection="true">
-diff -urN xkeyboard-config-2.26/symbols/ci xkeyboard-config-2.26.7/symbols/ci
---- xkeyboard-config-2.26/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ xkeyboard-config-2.26.7/symbols/ci	2018-09-11 12:30:28.000000000 +0000
+diff -urN xkeyboard-config-2.28-orig/symbols/ci xkeyboard-config-2.28/symbols/ci
+--- xkeyboard-config-2.28-orig/symbols/ci	1970-01-01 00:00:00.000000000 +0000
++++ xkeyboard-config-2.28/symbols/ci	2020-01-13 09:00:15.001379108 +0000
 @@ -0,0 +1,92 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
@@ -238,9 +240,9 @@ diff -urN xkeyboard-config-2.26/symbols/ci xkeyboard-config-2.26.7/symbols/ci
 +    modifier_map Mod5       { ISO_Level3_Latch };
 +};
 +
-diff -urN xkeyboard-config-2.26/symbols/Makefile.am xkeyboard-config-2.26.7/symbols/Makefile.am
---- xkeyboard-config-2.26/symbols/Makefile.am	2019-02-02 19:05:06.000000000 +0000
-+++ xkeyboard-config-2.26.7/symbols/Makefile.am	2019-10-02 09:50:30.425059339 +0000
+diff -urN xkeyboard-config-2.28-orig/symbols/Makefile.am xkeyboard-config-2.28/symbols/Makefile.am
+--- xkeyboard-config-2.28-orig/symbols/Makefile.am	2019-10-19 20:52:38.000000000 +0000
++++ xkeyboard-config-2.28/symbols/Makefile.am	2020-01-13 09:32:22.068507679 +0000
 @@ -7,7 +7,7 @@
  ba bd be \
  bg br brai \

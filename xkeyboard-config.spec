@@ -6,7 +6,7 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.26
+Version:    2.28
 Release:    7%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
@@ -16,19 +16,14 @@ Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
+Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
 %endif
 
-Patch01:    0001-evdev-inet-Fix-KEY_KEYBOARD-mapping.patch
-Patch02:    0001-Fixed-broken-pt-layout.patch
-Patch03:    0001-Map-evdev-keycode-KEY_ROTATE_LOCK_TOGGLE-to-XF86Rota.patch
-Patch04:    0001-Map-evdev-keycode-KEY_SOUND-to-XF86AudioPreset.patch
-Patch05:    0001-xkeyboard-config-ci.patch
+Patch01:    0001-ci-layouts.patch
 
 BuildArch:  noarch
 
-BuildRequires:  gettext
-BuildRequires:  intltool
+BuildRequires:  gettext gettext-devel
 BuildRequires:  libtool
 BuildRequires:  libxslt
 BuildRequires:  perl(XML::Parser)
@@ -59,7 +54,7 @@ Development files for %{name}.
 %autosetup -S git
 
 %build
-AUTOPOINT="intltoolize --automake --copy" autoreconf -v --force --install || exit 1
+autoreconf -v --force --install || exit 1
 %configure \
     --enable-compat-rules \
     --with-xkb-base=%{_datadir}/X11/xkb \
@@ -94,8 +89,18 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
-* Wed Oct 2 2019 Boyd Kelly <bkelly@coastsystems.net> 2.26-7
-- xkeyboard-config 2.26-7, with Ivory Coast layout
+* Mon Jan 13 2020 Boyd Kelly <bkelly@coastsystems.net> 2.28-7
+- xkeyboard-config 2.28 with Ivory Coast layouts
+
+* Fri Oct 25 2019 Peter Hutterer <peter.hutterer@redhat.com> 2.28-1
+- xkeyboard-config 2.28
+
+* Sat Jul 27 2019 Fedora Release Engineering <releng@fedoraproject.org> - 2.27-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
+* Thu Jun 13 2019 Peter Hutterer <peter.hutterer@redhat.com> 2.27-1
+- xkeyboard-config 2.27
+- drop intltool, no longer needed, see upstream commit e8026f673e
 
 * Mon May 27 2019 Peter Hutterer <peter.hutterer@redhat.com> 2.26-2
 - xkeyboard-config 2.26, with sources this time
