@@ -9,7 +9,7 @@ Name:       xkeyboard-config
 Version:    2.28
 Release:    7%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
-URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
+URL:        https://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
 %if 0%{?gitdate}
 Source0:    %{name}-%{gitdate}.tar.bz2
