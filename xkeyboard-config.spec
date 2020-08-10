@@ -32,6 +32,7 @@ BuildRequires:  pkgconfig(x11) >= 1.4.3
 BuildRequires:  pkgconfig(xorg-macros) >= 1.12
 BuildRequires:  pkgconfig(xproto) >= 7.0.20
 BuildRequires:  xkbcomp
+BuildRequires:  python3
 BuildRequires:  git
 
 %if 0%{?gitdate}
