@@ -6,7 +6,7 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.29
+Version:    2.30
 Release:    7%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
 URL:        https://www.freedesktop.org/wiki/Software/XKeyboardConfig
@@ -90,8 +90,8 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
-* Sun Aug 9 2020 Boyd Kelly <bkelly@coastsystems.net> 2.28-7
-- xkeyboard-config 2.29 with Ivory Coast layouts
+* Sun Aug 9 2020 Boyd Kelly <bkelly@coastsystems.net> 2.30-3
+- xkeyboard-config 2.30 with Ivory Coast layouts
 
 * Fri Jan 31 2020 Peter Hutterer <peter.hutterer@redhat.com> 2.29-1
 - xkeyboard-config 2.29
