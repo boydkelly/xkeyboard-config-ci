@@ -1,6 +1,6 @@
-diff -ru xkeyboard-config-2.30.orig/po/fr.po xkeyboard-config-2.30/po/fr.po
+diff -ruN xkeyboard-config-2.30.orig/po/fr.po xkeyboard-config-2.30/po/fr.po
 --- xkeyboard-config-2.30.orig/po/fr.po	2020-06-02 19:56:46.000000000 +0000
-+++ xkeyboard-config-2.30/po/fr.po	2020-09-06 12:33:39.108255342 +0000
++++ xkeyboard-config-2.30/po/fr.po	2020-09-06 15:25:00.331481993 +0000
 @@ -1,4 +1,4 @@
 -# Messages français pour GNU concernant xfree86_xkb_xml.
 +# Messaues français pour GNU concernant xfree86_xkb_xml.
@@ -32,9 +32,9 @@ diff -ru xkeyboard-config-2.30.orig/po/fr.po xkeyboard-config-2.30/po/fr.po
  #: rules/base.extras.xml:9
  msgid "apl"
  msgstr "apl"
-diff -ru xkeyboard-config-2.30.orig/rules/base.xml xkeyboard-config-2.30/rules/base.xml
+diff -ruN xkeyboard-config-2.30.orig/rules/base.xml xkeyboard-config-2.30/rules/base.xml
 --- xkeyboard-config-2.30.orig/rules/base.xml	2020-06-02 19:56:36.000000000 +0000
-+++ xkeyboard-config-2.30/rules/base.xml	2020-09-06 12:53:31.410200902 +0000
++++ xkeyboard-config-2.30/rules/base.xml	2020-09-06 15:21:44.803237676 +0000
 @@ -6406,6 +6406,54 @@
         </variant>
        </variantList>
@@ -90,68 +90,105 @@ diff -ru xkeyboard-config-2.30.orig/rules/base.xml xkeyboard-config-2.30/rules/b
    </layoutList>
    <optionList>
      <group allowMultipleSelection="true">
-diff -ru xkeyboard-config-2.30.orig/rules/evdev.xml xkeyboard-config-2.30/rules/evdev.xml
---- xkeyboard-config-2.30.orig/rules/evdev.xml	2020-06-02 19:56:50.000000000 +0000
-+++ xkeyboard-config-2.30/rules/evdev.xml	2020-09-06 12:53:48.670267740 +0000
-@@ -6406,6 +6406,54 @@
-        </variant>
-       </variantList>
-     </layout>
-+      <layout>
-+      <configItem>
-+        <name>ci</name>
-+        <shortDescription>ci</shortDescription>
-+        <description>French (Côte d'Ivoire)</description>
-+        <languageList>
-+          <iso639Id>fra</iso639Id>
-+        </languageList>
-+      </configItem>
-+       <variantList>
-+        <variant>
-+          <configItem>
-+            <name>civ</name>
-+            <shortDescription>civ</shortDescription>
-+            <description>Côte d'Ivoire, Multilingual</description>
-+            <languageList>
-+              <iso639Id>ata</iso639Id>
-+              <iso639Id>ati</iso639Id>
-+              <iso639Id>bm</iso639Id>
-+              <iso639Id>bci</iso639Id>
-+              <iso639Id>btg</iso639Id>
-+              <iso639Id>dyu</iso639Id>
-+              <iso639Id>fra</iso639Id>
-+              <iso639Id>gxx</iso639Id>
-+              <iso639Id>sef</iso639Id>
-+            </languageList>
-+          </configItem>
-+        </variant>
-+        <variant>
-+          <configItem>
-+            <name>civ_qw</name>
-+            <shortDescription>ciq</shortDescription>
-+            <description>Côte d'Ivoire, (Qwerty)</description>
-+            <languageList>
-+              <iso639Id>ata</iso639Id>
-+              <iso639Id>ati</iso639Id>
-+              <iso639Id>bm</iso639Id>
-+              <iso639Id>bci</iso639Id>
-+              <iso639Id>btg</iso639Id>
-+              <iso639Id>dyu</iso639Id>
-+              <iso639Id>fra</iso639Id>
-+              <iso639Id>gxx</iso639Id>
-+              <iso639Id>sef</iso639Id>
-+            </languageList>
-+          </configItem>
-+        </variant>
-+      </variantList>
-+    </layout>
-   </layoutList>
-   <optionList>
-     <group allowMultipleSelection="true">
-Only in xkeyboard-config-2.30/symbols: ci
-diff -ru xkeyboard-config-2.30.orig/symbols/Makefile.am xkeyboard-config-2.30/symbols/Makefile.am
+diff -ruN xkeyboard-config-2.30.orig/symbols/ci xkeyboard-config-2.30/symbols/ci
+--- xkeyboard-config-2.30.orig/symbols/ci	1970-01-01 00:00:00.000000000 +0000
++++ xkeyboard-config-2.30/symbols/ci	2020-09-06 15:20:49.723902822 +0000
+@@ -0,0 +1,92 @@
++default partial alphanumeric_keys
++xkb_symbols "basic" {
++    include "fr(azerty)"
++    include "level3(ralt_switch)" 
++    name[Group1]="French (Côte d'Ivoire)";
++
++};
++
++partial alphanumeric_keys
++xkb_symbols "civ" {
++    include "ci(basic)"
++    include "level3(ralt_switch)" 
++    include "ci(exclamation_switch)"
++    name[Group1]= "Côte d'Ivoire (Multilingual)";
++
++    	     // First row
++             key <TLDE>	{ [    asciitilde,     twosuperior,    U030C ]	};
++             key <AE02>	{ [    eacute,         2,   	 U0301,    oneeighth ]	};
++             key <AE04>	{ [apostrophe,         4,        U2018,       braceleft ]	};
++             key <AE07>	{ [    egrave,          7,        U0300, seveneighths ]	};
++    	    key <AE12>	{ [     equal,       plus,   U2019,  braceright ]	};
++
++             // Second row
++             key <AD03>	{ [	e,		E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
++             key <AD06>	{ [	y,		Y,		U01B4,		U01B3	] };	// U0272 =   (small), U019D =   (capital)
++             key <AD07>	{ [	u,		U,		U028B,		U01B2	] };	// U0272 =   (small), U019D =   (capital)
++             key <AD08>	{ [	i,		I,		U0269,		U0196	] };	// U0272 =   (small), U0196 =   (capital)
++             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
++
++             // Third row
++	     key <AC03> { [     d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
++             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
++             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
++
++             // Fourth row
++             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
++             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
++             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
++             key <AB07>	{ [	comma,		question,	U0242,		U0241	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
++
++};
++
++partial alphanumeric_keys
++xkb_symbols "civ_qw" {
++    include "ca(fr)"
++    include "level3(ralt_switch)" 
++    include "ci(semicolon_switch)"
++
++    name[Group1]= "Côte d'Ivoire (Qwerty multilingual)";
++
++             // First row
++             key <AE06>	{ [     6,   question,       U0300 ]	};
++
++             // Second row
++             key <AD03>	{ [	e,		E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
++             key <AD06>	{ [	y,		Y,		U01B4,		U01B3	] };	// U0272 =   (small), U019D =   (capital)
++             key <AD08>	{ [	i,		I,		U0269,		U0196	] };	// U0272 =   (small), U0196 =   (capital)
++             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
++
++             // Third row
++	     key <AC03> { [     d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
++             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
++             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
++
++             // Fourth row
++             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
++             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
++             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
++             key <AB08>	{ [    comma, apostrophe,    U030C ]	};
++             key <AB10>	{ [    eacute,     Eacute,   U0301 ]	};
++
++             key <AC11>	{ [    dead_grave,      dead_grave,     braceleft,      U2018 ]	};
++             key <BKSL>	{ [    less,            greater,        braceright,     U2019 ]	};
++
++};
++
++partial modifier_keys
++xkb_symbols "semicolon_switch" {
++    key <AC10> {
++    symbols[Group1] = [ ISO_Level3_Latch,	colon,	semicolon,	colon ] 
++    };
++    modifier_map Mod5	{ ISO_Level3_Latch };
++};
++
++partial modifier_keys
++xkb_symbols "exclamation_switch" {
++    key <AB10> {
++    symbols[Group1] = [ ISO_Level3_Latch,   U00A7,  exclam, U00A7 ]
++    };
++    modifier_map Mod5       { ISO_Level3_Latch };
++};
++
+diff -ruN xkeyboard-config-2.30.orig/symbols/Makefile.am xkeyboard-config-2.30/symbols/Makefile.am
 --- xkeyboard-config-2.30.orig/symbols/Makefile.am	2020-06-02 19:56:36.000000000 +0000
-+++ xkeyboard-config-2.30/symbols/Makefile.am	2020-09-06 12:03:00.486193874 +0000
++++ xkeyboard-config-2.30/symbols/Makefile.am	2020-09-06 15:21:04.458992406 +0000
 @@ -7,7 +7,7 @@
  ba bd be \
  bg br brai \
@@ -161,9 +198,9 @@ diff -ru xkeyboard-config-2.30.orig/symbols/Makefile.am xkeyboard-config-2.30/sy
  cm cn cz \
  de dk dz \
  ee eg es et epo eu \
-diff -ru xkeyboard-config-2.30.orig/symbols/Makefile.in xkeyboard-config-2.30/symbols/Makefile.in
+diff -ruN xkeyboard-config-2.30.orig/symbols/Makefile.in xkeyboard-config-2.30/symbols/Makefile.in
 --- xkeyboard-config-2.30.orig/symbols/Makefile.in	2020-06-02 19:56:42.000000000 +0000
-+++ xkeyboard-config-2.30/symbols/Makefile.in	2020-09-06 13:50:06.418239906 +0000
++++ xkeyboard-config-2.30/symbols/Makefile.in	2020-09-06 15:21:09.567023460 +0000
 @@ -366,7 +366,7 @@
  ba bd be \
  bg br brai \
