@@ -9,14 +9,14 @@ Name:       xkeyboard-config
 Version:    2.30
 Release:    7%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
-URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
+URL:        https://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
 %if 0%{?gitdate}
 Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
+Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
 %endif
 
 Patch01:    0001-Fix-symbols-in-syntax-error-spurious-git-conflict-ma.patch
