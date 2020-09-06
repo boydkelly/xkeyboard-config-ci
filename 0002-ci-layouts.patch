@@ -161,3 +161,15 @@ diff -ru xkeyboard-config-2.30.orig/symbols/Makefile.am xkeyboard-config-2.30/sy
  cm cn cz \
  de dk dz \
  ee eg es et epo eu \
+diff -ru xkeyboard-config-2.30.orig/symbols/Makefile.in xkeyboard-config-2.30/symbols/Makefile.in
+--- xkeyboard-config-2.30.orig/symbols/Makefile.in	2020-06-02 19:56:42.000000000 +0000
++++ xkeyboard-config-2.30/symbols/Makefile.in	2020-09-06 13:50:06.418239906 +0000
+@@ -366,7 +366,7 @@
+ ba bd be \
+ bg br brai \
+ bt bw by \
+-ca cd ch \
++ca cd ch ci \
+ cm cn cz \
+ de dk dz \
+ ee eg es et epo eu \
