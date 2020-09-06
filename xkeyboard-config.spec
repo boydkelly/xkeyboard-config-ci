@@ -20,7 +20,7 @@ Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}
 %endif
 
 Patch01:    0001-Fix-symbols-in-syntax-error-spurious-git-conflict-ma.patch
-Patch02:    0002-ci-layout.patch
+Patch02:    0002-ci-layouts.patch
 
 BuildArch:  noarch
 
