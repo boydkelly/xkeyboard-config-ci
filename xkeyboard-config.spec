@@ -9,17 +9,18 @@ Name:       xkeyboard-config
 Version:    2.30
 Release:    7%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
-URL:        https://www.freedesktop.org/wiki/Software/XKeyboardConfig
+URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
 %if 0%{?gitdate}
 Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
+Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
 %endif
 
-Patch01:    0001-ci-layouts.patch
+Patch01:    0001-Fix-symbols-in-syntax-error-spurious-git-conflict-ma.patch
+Patch02:    0002-ci-layout.patch
 
 BuildArch:  noarch
 
@@ -32,7 +33,6 @@ BuildRequires:  pkgconfig(x11) >= 1.4.3
 BuildRequires:  pkgconfig(xorg-macros) >= 1.12
 BuildRequires:  pkgconfig(xproto) >= 7.0.20
 BuildRequires:  xkbcomp
-BuildRequires:  python3
 BuildRequires:  git
 
 %if 0%{?gitdate}
@@ -68,7 +68,7 @@ make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
 
 # Remove unnecessary symlink
 rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
-%find_lang %{name} 
+%find_lang %{name}
 
 # Create filelist
 {
@@ -90,8 +90,17 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
-* Sun Aug 9 2020 Boyd Kelly <bkelly@coastsystems.net> 2.30-3
-- xkeyboard-config 2.30 with Ivory Coast layouts
+* Sun Sep 6 2020 Boyd Kelly <bkelly@coastsystems.net> 2.30-7
+- Add Côte d'Ivoire Keyboard
+
+* Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 2.30-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
+* Fri Jun 19 2020 Peter Hutterer <peter.hutterer@redhat.com> 2.30-2
+- Fix a syntax error in the indian symbols file
+
+* Wed Jun 03 2020 Peter Hutterer <peter.hutterer@redhat.com> 2.30-1
+- xkeyboard-config 2.30
 
 * Fri Jan 31 2020 Peter Hutterer <peter.hutterer@redhat.com> 2.29-1
 - xkeyboard-config 2.29

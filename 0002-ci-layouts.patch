@@ -1,0 +1,163 @@
+diff -ru xkeyboard-config-2.30.orig/po/fr.po xkeyboard-config-2.30/po/fr.po
+--- xkeyboard-config-2.30.orig/po/fr.po	2020-06-02 19:56:46.000000000 +0000
++++ xkeyboard-config-2.30/po/fr.po	2020-09-06 12:33:39.108255342 +0000
+@@ -1,4 +1,4 @@
+-# Messages français pour GNU concernant xfree86_xkb_xml.
++# Messaues français pour GNU concernant xfree86_xkb_xml.
+ # Copyright © 2004 Free Software Foundation, Inc.
+ # This file is distributed under the same license as the xkeyboard-config package.
+ # Michel Robitaille <robitail@IRO.UMontreal.CA>, traducteur depuis/since 1996.
+@@ -4648,6 +4648,24 @@
+ msgid "Ctrl+Alt+Backspace"
+ msgstr "Ctrl+Alt+Eff. arrière"
+ 
++#. Keyboard indicator for Côte d'Ivoire layouts
++#: ../rules/base.xml.in.h:377 ../rules/base.extras.xml.in.h:1117
++msgid "ci"
++msgstr "ci"
++
++# https://secure.wikimedia.org/wikipedia/fr/wiki/Côte d'Ivoire
++#: ../rules/base.xml.in.h:1118
++msgid "French (Côte d'Ivoire)"
++msgstr "Français (Côte d'Ivoire)"
++
++#: ../rules/base.xml.in.h:1119
++msgid "Côte d'Ivoire Multilingual"
++msgstr "Côte d'Ivoire multilingue"
++
++#: ../rules/base.xml.in.h:1120
++msgid "Côte d'Ivoire Multilingual (QWERTY)"
++msgstr "Côte d'Ivoire multilingue (qwerty)"
++
+ #: rules/base.extras.xml:9
+ msgid "apl"
+ msgstr "apl"
+diff -ru xkeyboard-config-2.30.orig/rules/base.xml xkeyboard-config-2.30/rules/base.xml
+--- xkeyboard-config-2.30.orig/rules/base.xml	2020-06-02 19:56:36.000000000 +0000
++++ xkeyboard-config-2.30/rules/base.xml	2020-09-06 12:53:31.410200902 +0000
+@@ -6406,6 +6406,54 @@
+        </variant>
+       </variantList>
+     </layout>
++      <layout>
++      <configItem>
++        <name>ci</name>
++        <shortDescription>ci</shortDescription>
++        <description>French (Côte d'Ivoire)</description>
++        <languageList>
++          <iso639Id>fra</iso639Id>
++        </languageList>
++      </configItem>
++       <variantList>
++        <variant>
++          <configItem>
++            <name>civ</name>
++            <shortDescription>civ</shortDescription>
++            <description>Côte d'Ivoire, Multilingual</description>
++            <languageList>
++              <iso639Id>ata</iso639Id>
++              <iso639Id>ati</iso639Id>
++              <iso639Id>bm</iso639Id>
++              <iso639Id>bci</iso639Id>
++              <iso639Id>btg</iso639Id>
++              <iso639Id>dyu</iso639Id>
++              <iso639Id>fra</iso639Id>
++              <iso639Id>gxx</iso639Id>
++              <iso639Id>sef</iso639Id>
++            </languageList>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>civ_qw</name>
++            <shortDescription>ciq</shortDescription>
++            <description>Côte d'Ivoire, (Qwerty)</description>
++            <languageList>
++              <iso639Id>ata</iso639Id>
++              <iso639Id>ati</iso639Id>
++              <iso639Id>bm</iso639Id>
++              <iso639Id>bci</iso639Id>
++              <iso639Id>btg</iso639Id>
++              <iso639Id>dyu</iso639Id>
++              <iso639Id>fra</iso639Id>
++              <iso639Id>gxx</iso639Id>
++              <iso639Id>sef</iso639Id>
++            </languageList>
++          </configItem>
++        </variant>
++      </variantList>
++    </layout>
+   </layoutList>
+   <optionList>
+     <group allowMultipleSelection="true">
+diff -ru xkeyboard-config-2.30.orig/rules/evdev.xml xkeyboard-config-2.30/rules/evdev.xml
+--- xkeyboard-config-2.30.orig/rules/evdev.xml	2020-06-02 19:56:50.000000000 +0000
++++ xkeyboard-config-2.30/rules/evdev.xml	2020-09-06 12:53:48.670267740 +0000
+@@ -6406,6 +6406,54 @@
+        </variant>
+       </variantList>
+     </layout>
++      <layout>
++      <configItem>
++        <name>ci</name>
++        <shortDescription>ci</shortDescription>
++        <description>French (Côte d'Ivoire)</description>
++        <languageList>
++          <iso639Id>fra</iso639Id>
++        </languageList>
++      </configItem>
++       <variantList>
++        <variant>
++          <configItem>
++            <name>civ</name>
++            <shortDescription>civ</shortDescription>
++            <description>Côte d'Ivoire, Multilingual</description>
++            <languageList>
++              <iso639Id>ata</iso639Id>
++              <iso639Id>ati</iso639Id>
++              <iso639Id>bm</iso639Id>
++              <iso639Id>bci</iso639Id>
++              <iso639Id>btg</iso639Id>
++              <iso639Id>dyu</iso639Id>
++              <iso639Id>fra</iso639Id>
++              <iso639Id>gxx</iso639Id>
++              <iso639Id>sef</iso639Id>
++            </languageList>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>civ_qw</name>
++            <shortDescription>ciq</shortDescription>
++            <description>Côte d'Ivoire, (Qwerty)</description>
++            <languageList>
++              <iso639Id>ata</iso639Id>
++              <iso639Id>ati</iso639Id>
++              <iso639Id>bm</iso639Id>
++              <iso639Id>bci</iso639Id>
++              <iso639Id>btg</iso639Id>
++              <iso639Id>dyu</iso639Id>
++              <iso639Id>fra</iso639Id>
++              <iso639Id>gxx</iso639Id>
++              <iso639Id>sef</iso639Id>
++            </languageList>
++          </configItem>
++        </variant>
++      </variantList>
++    </layout>
+   </layoutList>
+   <optionList>
+     <group allowMultipleSelection="true">
+Only in xkeyboard-config-2.30/symbols: ci
+diff -ru xkeyboard-config-2.30.orig/symbols/Makefile.am xkeyboard-config-2.30/symbols/Makefile.am
+--- xkeyboard-config-2.30.orig/symbols/Makefile.am	2020-06-02 19:56:36.000000000 +0000
++++ xkeyboard-config-2.30/symbols/Makefile.am	2020-09-06 12:03:00.486193874 +0000
+@@ -7,7 +7,7 @@
+ ba bd be \
+ bg br brai \
+ bt bw by \
+-ca cd ch \
++ca cd ch ci \
+ cm cn cz \
+ de dk dz \
+ ee eg es et epo eu \
