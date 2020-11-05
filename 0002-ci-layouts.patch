@@ -1,4 +1,4 @@
-diff -ruN xkeyboard-config-2.30.orig/po/fr.po xkeyboard-config-2.30/po/fr.po
+diff -uNrp xkeyboard-config-2.30.orig/po/fr.po xkeyboard-config-2.30/po/fr.po
 --- xkeyboard-config-2.30.orig/po/fr.po	2020-06-02 19:56:46.000000000 +0000
 +++ xkeyboard-config-2.30/po/fr.po	2020-09-06 15:25:00.331481993 +0000
 @@ -1,4 +1,4 @@
@@ -7,7 +7,7 @@ diff -ruN xkeyboard-config-2.30.orig/po/fr.po xkeyboard-config-2.30/po/fr.po
  # Copyright © 2004 Free Software Foundation, Inc.
  # This file is distributed under the same license as the xkeyboard-config package.
  # Michel Robitaille <robitail@IRO.UMontreal.CA>, traducteur depuis/since 1996.
-@@ -4648,6 +4648,24 @@
+@@ -4648,6 +4648,24 @@ msgstr "Séquence de touches pour tuer l
  msgid "Ctrl+Alt+Backspace"
  msgstr "Ctrl+Alt+Eff. arrière"
  
@@ -32,7 +32,7 @@ diff -ruN xkeyboard-config-2.30.orig/po/fr.po xkeyboard-config-2.30/po/fr.po
  #: rules/base.extras.xml:9
  msgid "apl"
  msgstr "apl"
-diff -ruN xkeyboard-config-2.30.orig/rules/base.xml xkeyboard-config-2.30/rules/base.xml
+diff -uNrp xkeyboard-config-2.30.orig/rules/base.xml xkeyboard-config-2.30/rules/base.xml
 --- xkeyboard-config-2.30.orig/rules/base.xml	2020-06-02 19:56:36.000000000 +0000
 +++ xkeyboard-config-2.30/rules/base.xml	2020-09-06 15:21:44.803237676 +0000
 @@ -6406,6 +6406,54 @@
@@ -90,10 +90,10 @@ diff -ruN xkeyboard-config-2.30.orig/rules/base.xml xkeyboard-config-2.30/rules/
    </layoutList>
    <optionList>
      <group allowMultipleSelection="true">
-diff -ruN xkeyboard-config-2.30.orig/symbols/ci xkeyboard-config-2.30/symbols/ci
+diff -uNrp xkeyboard-config-2.30.orig/symbols/ci xkeyboard-config-2.30/symbols/ci
 --- xkeyboard-config-2.30.orig/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ xkeyboard-config-2.30/symbols/ci	2020-09-06 15:20:49.723902822 +0000
-@@ -0,0 +1,92 @@
++++ xkeyboard-config-2.30/symbols/ci	2020-11-05 09:19:19.220090036 +0000
+@@ -0,0 +1,93 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
 +    include "fr(azerty)"
@@ -112,9 +112,9 @@ diff -ruN xkeyboard-config-2.30.orig/symbols/ci xkeyboard-config-2.30/symbols/ci
 +    	     // First row
 +             key <TLDE>	{ [    asciitilde,     twosuperior,    U030C ]	};
 +             key <AE02>	{ [    eacute,         2,   	 U0301,    oneeighth ]	};
-+             key <AE04>	{ [apostrophe,         4,        U2018,       braceleft ]	};
-+             key <AE07>	{ [    egrave,          7,        U0300, seveneighths ]	};
-+    	    key <AE12>	{ [     equal,       plus,   U2019,  braceright ]	};
++             key <AE04>	{ [    apostrophe,     4,        U2018,       braceleft ]	};
++             key <AE07>	{ [    egrave,         7,        U0300, seveneighths ]	};
++             key <AE12>	{ [    equal,       plus,   U2019,  braceright ]	};
 +
 +             // Second row
 +             key <AD03>	{ [	e,		E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
@@ -124,7 +124,7 @@ diff -ruN xkeyboard-config-2.30.orig/symbols/ci xkeyboard-config-2.30/symbols/ci
 +             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
 +
 +             // Third row
-+	     key <AC03> { [     d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
++	           key <AC03> { [ d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
 +             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
 +             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
 +
@@ -154,18 +154,19 @@ diff -ruN xkeyboard-config-2.30.orig/symbols/ci xkeyboard-config-2.30/symbols/ci
 +             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
 +
 +             // Third row
-+	     key <AC03> { [     d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
++      	     key <AC03> { [ d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
 +             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
 +             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
++             key <AC11>	{ [    dead_grave,      dead_grave,     braceleft,      U2018 ]	};
 +
 +             // Fourth row
 +             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
 +             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
 +             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
-+             key <AB08>	{ [    comma, apostrophe,    U030C ]	};
-+             key <AB10>	{ [    eacute,     Eacute,   U0301 ]	};
++             key <AB08>	{ [    comma, apostrophe,    U030C ]	}; // U030C = ̌
++             key <AB09>	{ [    period, period,    U0300 ]	}; // U0300 = grave combinator
++             key <AB10>	{ [    eacute,     Eacute,   U0301 ]	}; // U0301 = acute combinator
 +
-+             key <AC11>	{ [    dead_grave,      dead_grave,     braceleft,      U2018 ]	};
 +             key <BKSL>	{ [    less,            greater,        braceright,     U2019 ]	};
 +
 +};
@@ -186,10 +187,10 @@ diff -ruN xkeyboard-config-2.30.orig/symbols/ci xkeyboard-config-2.30/symbols/ci
 +    modifier_map Mod5       { ISO_Level3_Latch };
 +};
 +
-diff -ruN xkeyboard-config-2.30.orig/symbols/Makefile.am xkeyboard-config-2.30/symbols/Makefile.am
+diff -uNrp xkeyboard-config-2.30.orig/symbols/Makefile.am xkeyboard-config-2.30/symbols/Makefile.am
 --- xkeyboard-config-2.30.orig/symbols/Makefile.am	2020-06-02 19:56:36.000000000 +0000
 +++ xkeyboard-config-2.30/symbols/Makefile.am	2020-09-06 15:21:04.458992406 +0000
-@@ -7,7 +7,7 @@
+@@ -7,7 +7,7 @@ ara at au az \
  ba bd be \
  bg br brai \
  bt bw by \
@@ -198,10 +199,10 @@ diff -ruN xkeyboard-config-2.30.orig/symbols/Makefile.am xkeyboard-config-2.30/s
  cm cn cz \
  de dk dz \
  ee eg es et epo eu \
-diff -ruN xkeyboard-config-2.30.orig/symbols/Makefile.in xkeyboard-config-2.30/symbols/Makefile.in
+diff -uNrp xkeyboard-config-2.30.orig/symbols/Makefile.in xkeyboard-config-2.30/symbols/Makefile.in
 --- xkeyboard-config-2.30.orig/symbols/Makefile.in	2020-06-02 19:56:42.000000000 +0000
 +++ xkeyboard-config-2.30/symbols/Makefile.in	2020-09-06 15:21:09.567023460 +0000
-@@ -366,7 +366,7 @@
+@@ -366,7 +366,7 @@ ara at au az \
  ba bd be \
  bg br brai \
  bt bw by \

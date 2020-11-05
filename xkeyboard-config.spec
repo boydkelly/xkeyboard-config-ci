@@ -7,7 +7,7 @@
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
 Version:    2.30
-Release:    7%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Release:    9%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
 URL:        https://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
