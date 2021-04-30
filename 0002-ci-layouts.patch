@@ -1,13 +1,9 @@
-diff -uNrp xkeyboard-config-2.30.orig/po/fr.po xkeyboard-config-2.30/po/fr.po
---- xkeyboard-config-2.30.orig/po/fr.po	2020-06-02 19:56:46.000000000 +0000
-+++ xkeyboard-config-2.30/po/fr.po	2020-09-06 15:25:00.331481993 +0000
-@@ -1,4 +1,4 @@
--# Messages français pour GNU concernant xfree86_xkb_xml.
-+# Messaues français pour GNU concernant xfree86_xkb_xml.
- # Copyright © 2004 Free Software Foundation, Inc.
- # This file is distributed under the same license as the xkeyboard-config package.
- # Michel Robitaille <robitail@IRO.UMontreal.CA>, traducteur depuis/since 1996.
-@@ -4648,6 +4648,24 @@ msgstr "Séquence de touches pour tuer l
+Binary files xkeyboard-config-20210430/.git/index and xkeyboard-config-ci/.git/index differ
+Binary files xkeyboard-config-20210430/.git/objects/32/1a306af5b7f82f090f1b68de33195a622b8f9b and xkeyboard-config-ci/.git/objects/32/1a306af5b7f82f090f1b68de33195a622b8f9b differ
+diff -urN xkeyboard-config-20210430/po/fr.po xkeyboard-config-ci/po/fr.po
+--- xkeyboard-config-20210430/po/fr.po	2021-04-30 15:59:41.000000000 +0000
++++ xkeyboard-config-ci/po/fr.po	2021-04-30 18:42:57.818257074 +0000
+@@ -4502,6 +4502,23 @@
  msgid "Ctrl+Alt+Backspace"
  msgstr "Ctrl+Alt+Eff. arrière"
  
@@ -28,26 +24,27 @@ diff -uNrp xkeyboard-config-2.30.orig/po/fr.po xkeyboard-config-2.30/po/fr.po
 +#: ../rules/base.xml.in.h:1120
 +msgid "Côte d'Ivoire Multilingual (QWERTY)"
 +msgstr "Côte d'Ivoire multilingue (qwerty)"
-+
  #: rules/base.extras.xml:9
  msgid "apl"
  msgstr "apl"
-diff -uNrp xkeyboard-config-2.30.orig/rules/base.xml xkeyboard-config-2.30/rules/base.xml
---- xkeyboard-config-2.30.orig/rules/base.xml	2020-06-02 19:56:36.000000000 +0000
-+++ xkeyboard-config-2.30/rules/base.xml	2020-09-06 15:21:44.803237676 +0000
-@@ -6406,6 +6406,54 @@
-        </variant>
-       </variantList>
+diff -urN xkeyboard-config-20210430/rules/base.xml xkeyboard-config-ci/rules/base.xml
+--- xkeyboard-config-20210430/rules/base.xml	2021-04-30 15:59:42.000000000 +0000
++++ xkeyboard-config-ci/rules/base.xml	2021-04-30 16:56:51.053393727 +0000
+@@ -6355,11 +6355,51 @@
      </layout>
-+      <layout>
-+      <configItem>
+     <layout>
+       <configItem>
+-	<name>custom</name>
+-        <shortDescription>custom</shortDescription>
+-        <description>A user-defined custom Layout</description>
 +        <name>ci</name>
 +        <shortDescription>ci</shortDescription>
 +        <description>French (Côte d'Ivoire)</description>
 +        <languageList>
 +          <iso639Id>fra</iso639Id>
 +        </languageList>
-+      </configItem>
+       </configItem>
+-      <variantList/>
 +       <variantList>
 +        <variant>
 +          <configItem>
@@ -86,13 +83,12 @@ diff -uNrp xkeyboard-config-2.30.orig/rules/base.xml xkeyboard-config-2.30/rules
 +          </configItem>
 +        </variant>
 +      </variantList>
-+    </layout>
+     </layout>
    </layoutList>
    <optionList>
-     <group allowMultipleSelection="true">
-diff -uNrp xkeyboard-config-2.30.orig/symbols/ci xkeyboard-config-2.30/symbols/ci
---- xkeyboard-config-2.30.orig/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ xkeyboard-config-2.30/symbols/ci	2020-11-05 09:19:19.220090036 +0000
+diff -urN xkeyboard-config-20210430/symbols/ci xkeyboard-config-ci/symbols/ci
+--- xkeyboard-config-20210430/symbols/ci	1970-01-01 00:00:00.000000000 +0000
++++ xkeyboard-config-ci/symbols/ci	2020-11-05 09:19:19.220090036 +0000
 @@ -0,0 +1,93 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
@@ -187,27 +183,15 @@ diff -uNrp xkeyboard-config-2.30.orig/symbols/ci xkeyboard-config-2.30/symbols/c
 +    modifier_map Mod5       { ISO_Level3_Latch };
 +};
 +
-diff -uNrp xkeyboard-config-2.30.orig/symbols/Makefile.am xkeyboard-config-2.30/symbols/Makefile.am
---- xkeyboard-config-2.30.orig/symbols/Makefile.am	2020-06-02 19:56:36.000000000 +0000
-+++ xkeyboard-config-2.30/symbols/Makefile.am	2020-09-06 15:21:04.458992406 +0000
-@@ -7,7 +7,7 @@ ara at au az \
- ba bd be \
- bg br brai \
- bt bw by \
--ca cd ch \
+diff -urN xkeyboard-config-20210430/symbols/Makefile.am xkeyboard-config-ci/symbols/Makefile.am
+--- xkeyboard-config-20210430/symbols/Makefile.am	2021-04-30 15:59:42.000000000 +0000
++++ xkeyboard-config-ci/symbols/Makefile.am	2021-04-30 17:06:14.567795968 +0000
+@@ -5,7 +5,7 @@
+     ba bd be \
+     bg br brai \
+     bt bw by \
+-    ca cd ch \
 +ca cd ch ci \
- cm cn cz \
- de dk dz \
- ee eg es et epo eu \
-diff -uNrp xkeyboard-config-2.30.orig/symbols/Makefile.in xkeyboard-config-2.30/symbols/Makefile.in
---- xkeyboard-config-2.30.orig/symbols/Makefile.in	2020-06-02 19:56:42.000000000 +0000
-+++ xkeyboard-config-2.30/symbols/Makefile.in	2020-09-06 15:21:09.567023460 +0000
-@@ -366,7 +366,7 @@ ara at au az \
- ba bd be \
- bg br brai \
- bt bw by \
--ca cd ch \
-+ca cd ch ci \
- cm cn cz \
- de dk dz \
- ee eg es et epo eu \
+     cm cn cz \
+     de dk dz \
+     ee eg es et epo eu \

@@ -6,26 +6,26 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.30
+Version:    2.32
 Release:    9%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
-URL:        https://www.freedesktop.org/wiki/Software/XKeyboardConfig
+URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
 %if 0%{?gitdate}
 Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
+Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
 %endif
-
-Patch01:    0001-Fix-symbols-in-syntax-error-spurious-git-conflict-ma.patch
-Patch02:    0002-ci-layouts.patch
+Patch01: 0001-rules-add-a-custom-layout-to-the-XML-file.patch
+Patch02: 0001-meson.build-add-option-to-install-the-legacy-xorg-sy.patch
+Patch03: 0002-ci-layouts.patch
 
 BuildArch:  noarch
 
 BuildRequires:  gettext gettext-devel
-BuildRequires:  libtool
+BuildRequires:  meson
 BuildRequires:  libxslt
 BuildRequires:  perl(XML::Parser)
 BuildRequires:  pkgconfig(glib-2.0)
@@ -33,11 +33,7 @@ BuildRequires:  pkgconfig(x11) >= 1.4.3
 BuildRequires:  pkgconfig(xorg-macros) >= 1.12
 BuildRequires:  pkgconfig(xproto) >= 7.0.20
 BuildRequires:  xkbcomp
-BuildRequires:  git
-
-%if 0%{?gitdate}
 BuildRequires:  git-core
-%endif
 
 %description
 This package contains configuration data used by the X Keyboard Extension (XKB),
@@ -55,16 +51,11 @@ Development files for %{name}.
 %autosetup -S git
 
 %build
-autoreconf -v --force --install || exit 1
-%configure \
-    --enable-compat-rules \
-    --with-xkb-base=%{_datadir}/X11/xkb \
-    --with-xkb-rules-symlink=xorg
-
-make %{?_smp_mflags}
+%meson -Dcompat-rules=true -Dxorg-rules-symlinks=true
+%meson_build
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
+%meson_install
 
 # Remove unnecessary symlink
 rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
@@ -80,18 +71,41 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 }
 
 %files -f files.list -f %{name}.lang
-%doc AUTHORS README NEWS TODO COPYING docs/README.* docs/HOWTO.*
+%doc AUTHORS README NEWS COPYING docs/README.* docs/HOWTO.*
+%{_mandir}/man7/xkeyboard-config.*
 %{_datadir}/X11/xkb/rules/xorg
 %{_datadir}/X11/xkb/rules/xorg.lst
 %{_datadir}/X11/xkb/rules/xorg.xml
-%{_mandir}/man7/xkeyboard-config.*
 
 %files devel
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
-* Sun Sep 6 2020 Boyd Kelly <bkelly@coastsystems.net> 2.30-7
-- Add Côte d'Ivoire Keyboard
+* Fri Apr 30 2021 Boyd Kelly <bkelly@coastsystems.net> 2.32-9
+* Tue Apr 20 2021 Peter Hutterer <peter.hutterer@redhat.com> 2.32-3
+- Restore the xorg ruleset, console-setup and possibly others are still
+  using those (#1951459)
+
+* Fri Apr 09 2021 Peter Hutterer <peter.hutterer@redhat.com> 2.32-2
+- Allow for a "custom" layout
+
+* Tue Feb 16 2021 Peter Hutterer <peter.hutterer@redhat.com> 2.32-1
+- xkeyboard-config 2.32
+- build with meson now
+- drop the xorg ruleset, no longer in use. Everything is hardcoded to evdev
+  these days.
+
+* Thu Jan 28 2021 Fedora Release Engineering <releng@fedoraproject.org> - 2.31-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
+* Tue Dec 01 2020 Peter Hutterer <peter.hutterer@redhat.com> 2.31-3
+- Add make to BuildRequires
+
+* Wed Nov 04 2020 Peter Hutterer <peter.hutterer@redhat.com> 2.31-2
+- Fix BuildRequires for git, we only need git-core
+
+* Wed Oct 07 2020 Peter Hutterer <peter.hutterer@redhat.com> 2.31-1
+- xkeyboard-config 2.31
 
 * Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 2.30-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
