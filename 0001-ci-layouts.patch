@@ -145,7 +145,7 @@ diff -urN xkeyboard-config-2.33.orig/rules/evdev.xml xkeyboard-config-2.33/rules
    <optionList>
 diff -urN xkeyboard-config-2.33.orig/symbols/ci xkeyboard-config-2.33/symbols/ci
 --- xkeyboard-config-2.33.orig/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ xkeyboard-config-2.33/symbols/ci	2021-07-26 22:17:03.063536031 +0000
++++ xkeyboard-config-2.33/symbols/ci	2021-07-26 22:56:04.758136897 +0000
 @@ -0,0 +1,95 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
@@ -218,11 +218,11 @@ diff -urN xkeyboard-config-2.33.orig/symbols/ci xkeyboard-config-2.33/symbols/ci
 +             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
 +             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
 +             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
-+             key <AB08>	{ [    comma, apostrophe,    U030C ]	}; // U030C = ̌
-+             key <AB09>	{ [    period, period,    U0300 ]	}; // U0300 = grave combinator
-+             key <AB10>	{ [    eacute,     Eacute,   U0301 ]	}; // U0301 = acute combinator
++             key <AB08>	{ [ comma, apostrophe,    U030C ]	}; // U030C = ̌
++             key <AB09>	{ [ period, period,    dead_grave ]	}; // U0300 = grave combinator
++             key <AB10>	{ [ eacute,  Eacute,   dead_acute ]	}; // U0301 = acute combinator
 +
-+             key <BKSL>	{ [    less,            greater,        braceright,     U2019 ]	};
++             key <BKSL>	{ [ less,    greater,  braceright,  U2019 ]	};
 +
 +};
 +
