@@ -18,7 +18,8 @@ Source2:    commitid
 %else
 Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
 %endif
-Patch01: 0002-ci-layouts.patch
+
+Patch01:    0001-ci-layouts.patch
 
 BuildArch:  noarch
 
@@ -79,8 +80,10 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
-* Mon Jul 26 2021 Boyd Kelly <bkelly@coastsystems.net> 2.33-9
-* Fri Apr 30 2021 Boyd Kelly <bkelly@coastsystems.net> 2.32-9
+* Mon Jul 26 2021 Boyd Kelly <boyd.kelly@coastsystems.net> 2.33-9
+* Tue Jun 22 2021 Peter Hutterer <peter.hutterer@redhat.com> 2.33-3
+- xkeyboard-config 2.33
+
 * Tue Apr 20 2021 Peter Hutterer <peter.hutterer@redhat.com> 2.32-3
 - Restore the xorg ruleset, console-setup and possibly others are still
   using those (#1951459)
