@@ -1,9 +1,37 @@
-Binary files xkeyboard-config-20210430/.git/index and xkeyboard-config-ci/.git/index differ
-Binary files xkeyboard-config-20210430/.git/objects/32/1a306af5b7f82f090f1b68de33195a622b8f9b and xkeyboard-config-ci/.git/objects/32/1a306af5b7f82f090f1b68de33195a622b8f9b differ
-diff -urN xkeyboard-config-20210430/po/fr.po xkeyboard-config-ci/po/fr.po
---- xkeyboard-config-20210430/po/fr.po	2021-04-30 15:59:41.000000000 +0000
-+++ xkeyboard-config-ci/po/fr.po	2021-04-30 18:42:57.818257074 +0000
-@@ -4502,6 +4502,23 @@
+Binary files xkeyboard-config-20210726/.git/index and xkeyboard-config-ci/.git/index differ
+diff -urN xkeyboard-config-20210726/.git/logs/HEAD xkeyboard-config-ci/.git/logs/HEAD
+--- xkeyboard-config-20210726/.git/logs/HEAD	2021-07-26 18:13:20.000000000 +0000
++++ xkeyboard-config-ci/.git/logs/HEAD	2021-07-26 17:57:27.000000000 +0000
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 4fadd3ddf2000145fa2b757dc4d30867b28d8adc Boyd Kelly <bkelly@coastsystems.net> 1627323200 +0000	clone: from git://git.freedesktop.org/git/xkeyboard-config
++0000000000000000000000000000000000000000 4fadd3ddf2000145fa2b757dc4d30867b28d8adc Boyd Kelly <bkelly@coastsystems.net> 1627322247 +0000	clone: from git://git.freedesktop.org/git/xkeyboard-config
+diff -urN xkeyboard-config-20210726/.git/logs/refs/heads/master xkeyboard-config-ci/.git/logs/refs/heads/master
+--- xkeyboard-config-20210726/.git/logs/refs/heads/master	2021-07-26 18:13:20.000000000 +0000
++++ xkeyboard-config-ci/.git/logs/refs/heads/master	2021-07-26 17:57:27.000000000 +0000
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 4fadd3ddf2000145fa2b757dc4d30867b28d8adc Boyd Kelly <bkelly@coastsystems.net> 1627323200 +0000	clone: from git://git.freedesktop.org/git/xkeyboard-config
++0000000000000000000000000000000000000000 4fadd3ddf2000145fa2b757dc4d30867b28d8adc Boyd Kelly <bkelly@coastsystems.net> 1627322247 +0000	clone: from git://git.freedesktop.org/git/xkeyboard-config
+diff -urN xkeyboard-config-20210726/.git/logs/refs/remotes/origin/HEAD xkeyboard-config-ci/.git/logs/refs/remotes/origin/HEAD
+--- xkeyboard-config-20210726/.git/logs/refs/remotes/origin/HEAD	2021-07-26 18:13:20.000000000 +0000
++++ xkeyboard-config-ci/.git/logs/refs/remotes/origin/HEAD	2021-07-26 17:57:27.000000000 +0000
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 4fadd3ddf2000145fa2b757dc4d30867b28d8adc Boyd Kelly <bkelly@coastsystems.net> 1627323200 +0000	clone: from git://git.freedesktop.org/git/xkeyboard-config
++0000000000000000000000000000000000000000 4fadd3ddf2000145fa2b757dc4d30867b28d8adc Boyd Kelly <bkelly@coastsystems.net> 1627322247 +0000	clone: from git://git.freedesktop.org/git/xkeyboard-config
+diff -urN xkeyboard-config-20210726/.git/objects/info/packs xkeyboard-config-ci/.git/objects/info/packs
+--- xkeyboard-config-20210726/.git/objects/info/packs	2021-07-26 18:13:20.000000000 +0000
++++ xkeyboard-config-ci/.git/objects/info/packs	2021-07-26 17:57:28.000000000 +0000
+@@ -1,2 +1,2 @@
+-P pack-2fbb7bcc30583bda7cf413535fcf0b6f1f372598.pack
++P pack-2b5bafb694003755a23726c0687e1263c42849fc.pack
+ 
+Binary files xkeyboard-config-20210726/.git/objects/pack/pack-2b5bafb694003755a23726c0687e1263c42849fc.idx and xkeyboard-config-ci/.git/objects/pack/pack-2b5bafb694003755a23726c0687e1263c42849fc.idx differ
+Binary files xkeyboard-config-20210726/.git/objects/pack/pack-2b5bafb694003755a23726c0687e1263c42849fc.pack and xkeyboard-config-ci/.git/objects/pack/pack-2b5bafb694003755a23726c0687e1263c42849fc.pack differ
+Binary files xkeyboard-config-20210726/.git/objects/pack/pack-2fbb7bcc30583bda7cf413535fcf0b6f1f372598.idx and xkeyboard-config-ci/.git/objects/pack/pack-2fbb7bcc30583bda7cf413535fcf0b6f1f372598.idx differ
+Binary files xkeyboard-config-20210726/.git/objects/pack/pack-2fbb7bcc30583bda7cf413535fcf0b6f1f372598.pack and xkeyboard-config-ci/.git/objects/pack/pack-2fbb7bcc30583bda7cf413535fcf0b6f1f372598.pack differ
+diff -urN xkeyboard-config-20210726/po/fr.po xkeyboard-config-ci/po/fr.po
+--- xkeyboard-config-20210726/po/fr.po	2021-07-26 18:13:20.000000000 +0000
++++ xkeyboard-config-ci/po/fr.po	2021-07-26 18:03:29.823540680 +0000
+@@ -4546,6 +4546,23 @@
  msgid "Ctrl+Alt+Backspace"
  msgstr "Ctrl+Alt+Eff. arrière"
  
@@ -27,10 +55,10 @@ diff -urN xkeyboard-config-20210430/po/fr.po xkeyboard-config-ci/po/fr.po
  #: rules/base.extras.xml:9
  msgid "apl"
  msgstr "apl"
-diff -urN xkeyboard-config-20210430/rules/base.xml xkeyboard-config-ci/rules/base.xml
---- xkeyboard-config-20210430/rules/base.xml	2021-04-30 15:59:42.000000000 +0000
-+++ xkeyboard-config-ci/rules/base.xml	2021-04-30 16:56:51.053393727 +0000
-@@ -6355,11 +6355,51 @@
+diff -urN xkeyboard-config-20210726/rules/base.xml xkeyboard-config-ci/rules/base.xml
+--- xkeyboard-config-20210726/rules/base.xml	2021-07-26 18:13:20.000000000 +0000
++++ xkeyboard-config-ci/rules/base.xml	2021-07-26 18:04:44.840975772 +0000
+@@ -6367,11 +6367,51 @@
      </layout>
      <layout>
        <configItem>
@@ -86,8 +114,8 @@ diff -urN xkeyboard-config-20210430/rules/base.xml xkeyboard-config-ci/rules/bas
      </layout>
    </layoutList>
    <optionList>
-diff -urN xkeyboard-config-20210430/symbols/ci xkeyboard-config-ci/symbols/ci
---- xkeyboard-config-20210430/symbols/ci	1970-01-01 00:00:00.000000000 +0000
+diff -urN xkeyboard-config-20210726/symbols/ci xkeyboard-config-ci/symbols/ci
+--- xkeyboard-config-20210726/symbols/ci	1970-01-01 00:00:00.000000000 +0000
 +++ xkeyboard-config-ci/symbols/ci	2020-11-05 09:19:19.220090036 +0000
 @@ -0,0 +1,93 @@
 +default partial alphanumeric_keys
@@ -183,9 +211,9 @@ diff -urN xkeyboard-config-20210430/symbols/ci xkeyboard-config-ci/symbols/ci
 +    modifier_map Mod5       { ISO_Level3_Latch };
 +};
 +
-diff -urN xkeyboard-config-20210430/symbols/Makefile.am xkeyboard-config-ci/symbols/Makefile.am
---- xkeyboard-config-20210430/symbols/Makefile.am	2021-04-30 15:59:42.000000000 +0000
-+++ xkeyboard-config-ci/symbols/Makefile.am	2021-04-30 17:06:14.567795968 +0000
+diff -urN xkeyboard-config-20210726/symbols/Makefile.am xkeyboard-config-ci/symbols/Makefile.am
+--- xkeyboard-config-20210726/symbols/Makefile.am	2021-07-26 18:13:20.000000000 +0000
++++ xkeyboard-config-ci/symbols/Makefile.am	2021-07-26 18:05:24.018202997 +0000
 @@ -5,7 +5,7 @@
      ba bd be \
      bg br brai \
