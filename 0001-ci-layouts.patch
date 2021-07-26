@@ -145,8 +145,8 @@ diff -urN xkeyboard-config-2.33.orig/rules/evdev.xml xkeyboard-config-2.33/rules
    <optionList>
 diff -urN xkeyboard-config-2.33.orig/symbols/ci xkeyboard-config-2.33/symbols/ci
 --- xkeyboard-config-2.33.orig/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ xkeyboard-config-2.33/symbols/ci	2020-11-05 09:19:19.220090036 +0000
-@@ -0,0 +1,93 @@
++++ xkeyboard-config-2.33/symbols/ci	2021-07-26 22:17:03.063536031 +0000
+@@ -0,0 +1,95 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
 +    include "fr(azerty)"
@@ -177,6 +177,7 @@ diff -urN xkeyboard-config-2.33.orig/symbols/ci xkeyboard-config-2.33/symbols/ci
 +             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
 +
 +             // Third row
++	           key <AC02> { [ s, 		S, 		U00A7   ] };	// s, S, Section symbol 
 +	           key <AC03> { [ d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
 +             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
 +             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
@@ -207,6 +208,7 @@ diff -urN xkeyboard-config-2.33.orig/symbols/ci xkeyboard-config-2.33/symbols/ci
 +             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
 +
 +             // Third row
++	           key <AC02> { [ s, 		S, 		U00A7   ] };	// s, S, Section symbol 
 +      	     key <AC03> { [ d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
 +             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
 +             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
