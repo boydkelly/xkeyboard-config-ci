@@ -6,7 +6,7 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.32
+Version:    2.33
 Release:    9%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
@@ -81,6 +81,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
+* Mon Jul 26 2021 Boyd Kelly <bkelly@coastsystems.net> 2.33-9
 * Fri Apr 30 2021 Boyd Kelly <bkelly@coastsystems.net> 2.32-9
 * Tue Apr 20 2021 Peter Hutterer <peter.hutterer@redhat.com> 2.32-3
 - Restore the xorg ruleset, console-setup and possibly others are still
