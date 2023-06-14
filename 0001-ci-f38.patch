@@ -1,49 +1,57 @@
-diff -urN xkeyboard-config-2.33.orig/po/fr.po xkeyboard-config-2.33/po/fr.po
---- xkeyboard-config-2.33.orig/po/fr.po	2021-06-08 20:20:50.000000000 +0000
-+++ xkeyboard-config-2.33/po/fr.po	2021-07-26 18:35:40.183240523 +0000
-@@ -4633,6 +4633,23 @@
+diff -urN xkeyboard-config-2.38/po/fr.po xkeyboard-config-2.38-ci/po/fr.po
+--- xkeyboard-config-2.38/po/fr.po	2023-02-04 17:31:37.000000000 +0000
++++ xkeyboard-config-2.38-ci/po/fr.po	2023-06-14 15:14:15.946019349 +0000
+@@ -12,7 +12,7 @@
+ "Project-Id-Version: xkeyboard-config 2.37.99\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2023-01-22 21:04+0000\n"
+-"PO-Revision-Date: 2023-01-23 20:49+0100\n"
++"PO-Revision-Date: 2023-06-14 15:14+0000\n"
+ "Last-Translator: Jean-Philippe Guérard <jean-philippe.guerard@corbeaunoir.org>\n"
+ "Language-Team: French <traduc@traduc.org>\n"
+ "Language: fr\n"
+@@ -4673,6 +4673,24 @@
  msgid "Ctrl+Alt+Backspace"
  msgstr "Ctrl+Alt+Eff. arrière"
  
 +#. Keyboard indicator for Côte d'Ivoire layouts
-+#: ../rules/base.xml.in.h:377 ../rules/base.extras.xml.in.h:1117
++#: rules/base.xml:377 rules/base.extras.xml:1117
 +msgid "ci"
 +msgstr "ci"
 +
 +# https://secure.wikimedia.org/wikipedia/fr/wiki/Côte d'Ivoire
-+#: ../rules/base.xml.in.h:1118
++#: rules/base.xml:1118
 +msgid "French (Côte d'Ivoire)"
 +msgstr "Français (Côte d'Ivoire)"
 +
-+#: ../rules/base.xml.in.h:1119
++#: rules/base.xml:1119
 +msgid "Côte d'Ivoire Multilingual"
 +msgstr "Côte d'Ivoire multilingue"
 +
-+#: ../rules/base.xml.in.h:1120
++#: rules/base.xml:1120
 +msgid "Côte d'Ivoire Multilingual (QWERTY)"
 +msgstr "Côte d'Ivoire multilingue (qwerty)"
++
  #: rules/base.extras.xml:9
  msgid "apl"
  msgstr "apl"
-diff -urN xkeyboard-config-2.33.orig/rules/base.xml xkeyboard-config-2.33/rules/base.xml
---- xkeyboard-config-2.33.orig/rules/base.xml	2021-06-08 20:20:40.000000000 +0000
-+++ xkeyboard-config-2.33/rules/base.xml	2021-07-26 18:37:53.736449372 +0000
-@@ -6361,11 +6361,51 @@
+diff -urN xkeyboard-config-2.38/rules/base.xml xkeyboard-config-2.38-ci/rules/base.xml
+--- xkeyboard-config-2.38/rules/base.xml	2023-02-04 17:31:37.000000000 +0000
++++ xkeyboard-config-2.38-ci/rules/base.xml	2023-06-14 15:07:05.903665771 +0000
+@@ -6896,6 +6896,54 @@
+       </configItem>
+       <variantList/>
      </layout>
-     <layout>
-       <configItem>
--	<name>custom</name>
--        <shortDescription>custom</shortDescription>
--        <description>A user-defined custom Layout</description>
++    <layout>
++      <configItem>
 +        <name>ci</name>
 +        <shortDescription>ci</shortDescription>
 +        <description>French (Côte d'Ivoire)</description>
 +        <languageList>
 +          <iso639Id>fra</iso639Id>
 +        </languageList>
-       </configItem>
--      <variantList/>
-+       <variantList>
++      </configItem>
++      <variantList>
 +        <variant>
 +          <configItem>
 +            <name>civ</name>
@@ -81,71 +89,13 @@ diff -urN xkeyboard-config-2.33.orig/rules/base.xml xkeyboard-config-2.33/rules/
 +          </configItem>
 +        </variant>
 +      </variantList>
-     </layout>
++    </layout>
    </layoutList>
    <optionList>
-diff -urN xkeyboard-config-2.33.orig/rules/evdev.xml xkeyboard-config-2.33/rules/evdev.xml
---- xkeyboard-config-2.33.orig/rules/evdev.xml	2021-06-08 20:20:55.000000000 +0000
-+++ xkeyboard-config-2.33/rules/evdev.xml	2021-07-26 18:42:32.796975266 +0000
-@@ -6361,11 +6361,51 @@
-     </layout>
-     <layout>
-       <configItem>
--	<name>custom</name>
--        <shortDescription>custom</shortDescription>
--        <description>A user-defined custom Layout</description>
-+        <name>ci</name>
-+        <shortDescription>ci</shortDescription>
-+        <description>French (Côte d'Ivoire)</description>
-+        <languageList>
-+          <iso639Id>fra</iso639Id>
-+        </languageList>
-       </configItem>
--      <variantList/>
-+       <variantList>
-+        <variant>
-+          <configItem>
-+            <name>civ</name>
-+            <shortDescription>civ</shortDescription>
-+            <description>Côte d'Ivoire, Multilingual</description>
-+            <languageList>
-+              <iso639Id>ata</iso639Id>
-+              <iso639Id>ati</iso639Id>
-+              <iso639Id>bm</iso639Id>
-+              <iso639Id>bci</iso639Id>
-+              <iso639Id>btg</iso639Id>
-+              <iso639Id>dyu</iso639Id>
-+              <iso639Id>fra</iso639Id>
-+              <iso639Id>gxx</iso639Id>
-+              <iso639Id>sef</iso639Id>
-+            </languageList>
-+          </configItem>
-+        </variant>
-+        <variant>
-+          <configItem>
-+            <name>civ_qw</name>
-+            <shortDescription>ciq</shortDescription>
-+            <description>Côte d'Ivoire, (Qwerty)</description>
-+            <languageList>
-+              <iso639Id>ata</iso639Id>
-+              <iso639Id>ati</iso639Id>
-+              <iso639Id>bm</iso639Id>
-+              <iso639Id>bci</iso639Id>
-+              <iso639Id>btg</iso639Id>
-+              <iso639Id>dyu</iso639Id>
-+              <iso639Id>fra</iso639Id>
-+              <iso639Id>gxx</iso639Id>
-+              <iso639Id>sef</iso639Id>
-+            </languageList>
-+          </configItem>
-+        </variant>
-+      </variantList>
-     </layout>
-   </layoutList>
-   <optionList>
-diff -urN xkeyboard-config-2.33.orig/symbols/ci xkeyboard-config-2.33/symbols/ci
---- xkeyboard-config-2.33.orig/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ xkeyboard-config-2.33/symbols/ci	2021-07-26 22:56:04.758136897 +0000
+     <group allowMultipleSelection="true">
+diff -urN xkeyboard-config-2.38/symbols/ci xkeyboard-config-2.38-ci/symbols/ci
+--- xkeyboard-config-2.38/symbols/ci	1970-01-01 00:00:00.000000000 +0000
++++ xkeyboard-config-2.38-ci/symbols/ci	2023-06-14 14:56:47.658256573 +0000
 @@ -0,0 +1,95 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
@@ -242,15 +192,3 @@ diff -urN xkeyboard-config-2.33.orig/symbols/ci xkeyboard-config-2.33/symbols/ci
 +    modifier_map Mod5       { ISO_Level3_Latch };
 +};
 +
-diff -urN xkeyboard-config-2.33.orig/symbols/Makefile.am xkeyboard-config-2.33/symbols/Makefile.am
---- xkeyboard-config-2.33.orig/symbols/Makefile.am	2021-06-08 20:20:40.000000000 +0000
-+++ xkeyboard-config-2.33/symbols/Makefile.am	2021-07-26 18:38:18.519673695 +0000
-@@ -5,7 +5,7 @@
-     ba bd be \
-     bg br brai \
-     bt bw by \
--    ca cd ch \
-+ca cd ch ci \
-     cm cn cz \
-     de dk dz \
-     ee eg es et epo eu \

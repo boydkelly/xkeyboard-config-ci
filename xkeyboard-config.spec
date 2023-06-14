@@ -6,20 +6,20 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.33
-Release:    10%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Version:    2.38
+Release:    9%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
-URL:        https://www.freedesktop.org/wiki/Software/XKeyboardConfig
+URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
 %if 0%{?gitdate}
 Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.bz2
+Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
 %endif
 
-Patch01:    0001-ci-layouts.patch
+Patch01: 0001-ci-f38.patch
 
 BuildArch:  noarch
 
@@ -80,7 +80,36 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
-* Mon Jul 26 2021 Boyd Kelly <boyd.kelly@coastsystems.net> 2.33-10
+* Wed Jun 14 2023 Boyd Kelly <bkelly@coastsystems.net> - 2.38-9
+- xkeyboard-config 2.38
+
+* Tue Feb 07 2023 Peter Hutterer <peter.hutterer@redhat.com> - 2.38-1
+- xkeyboard-config 2.38
+
+* Sat Jan 21 2023 Fedora Release Engineering <releng@fedoraproject.org> - 2.36-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_38_Mass_Rebuild
+
+* Sat Nov 26 2022 Davide Cavalca <dcavalca@fedoraproject.org> - 2.36-3
+- Backport upstream MR to allow Apple MacBook keyboards to type \ properly
+
+* Sat Jul 23 2022 Fedora Release Engineering <releng@fedoraproject.org> - 2.36-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
+* Thu Jun 16 2022 Peter Hutterer <peter.hutterer@redhat.com> - 2.36-1
+- xkeyboard-config 2.36
+
+* Wed Feb 09 2022 Peter Hutterer <peter.hutterer@redhat.com> - 2.35.1-1
+- xkeyboard-config 2.35.1
+
+* Sat Jan 22 2022 Fedora Release Engineering <releng@fedoraproject.org> - 2.34-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
+* Thu Oct 07 2021 Peter Hutterer <peter.hutterer@redhat.com> - 2.34-1
+- xkeyboard-config 2.34
+
+* Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 2.33-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
 * Tue Jun 22 2021 Peter Hutterer <peter.hutterer@redhat.com> 2.33-3
 - xkeyboard-config 2.33
 
