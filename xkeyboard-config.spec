@@ -19,6 +19,8 @@ Source2:    commitid
 Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
 %endif
 
+Patch01: 0001-ci-f39.patch
+
 BuildArch:  noarch
 
 BuildRequires:  gettext gettext-devel
