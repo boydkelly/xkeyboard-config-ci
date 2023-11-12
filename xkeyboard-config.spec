@@ -6,7 +6,7 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.38
+Version:    2.40
 Release:    9%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    MIT
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
@@ -16,10 +16,8 @@ Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
+Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
 %endif
-
-Patch01: 0001-ci-f38.patch
 
 BuildArch:  noarch
 
@@ -80,8 +78,17 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
-* Wed Jun 14 2023 Boyd Kelly <bkelly@coastsystems.net> - 2.38-9
-- xkeyboard-config 2.38
+* Mon Nov 13 2023 Boyd Kelly <bkelly@coastsystems.net> - 2.40-1
+- xkeyboard-config 2.40
+
+* Fri Oct 13 2023 Peter Hutterer <peter.hutterer@redhat.com> - 2.40-1
+- xkeyboard-config 2.40
+
+* Sat Jul 22 2023 Fedora Release Engineering <releng@fedoraproject.org> - 2.39-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
+
+* Mon Jun 12 2023 Peter Hutterer <peter.hutterer@redhat.com> - 2.39-1
+- xkeyboard-config 2.39
 
 * Tue Feb 07 2023 Peter Hutterer <peter.hutterer@redhat.com> - 2.38-1
 - xkeyboard-config 2.38
