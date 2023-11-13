@@ -1,6 +1,6 @@
 diff -uNr xkeyboard-config-20231112/po/fr.po xkeyboard-config-20231112-ci/po/fr.po
 --- xkeyboard-config-20231112/po/fr.po	2023-11-12 12:28:16.000000000 +0000
-+++ xkeyboard-config-20231112-ci/po/fr.po	2023-11-12 14:16:15.018998950 +0000
++++ xkeyboard-config-20231112-ci/po/fr.po	2023-11-13 12:11:53.851975929 +0000
 @@ -4687,6 +4687,23 @@
  msgid "Use user-defined custom XKB types"
  msgstr "Utiliser des types XKB utilisateur personnalisés"
@@ -27,7 +27,7 @@ diff -uNr xkeyboard-config-20231112/po/fr.po xkeyboard-config-20231112-ci/po/fr.
  msgstr "xx"
 diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/rules/base.xml
 --- xkeyboard-config-20231112/rules/base.xml	2023-11-12 12:28:16.000000000 +0000
-+++ xkeyboard-config-20231112-ci/rules/base.xml	2023-11-12 12:53:37.867958100 +0000
++++ xkeyboard-config-20231112-ci/rules/base.xml	2023-11-13 12:11:53.855975929 +0000
 @@ -799,7 +799,9 @@
          <name>logii350</name>
          <description>Logitech Internet 350</description>
@@ -104,7 +104,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
      </layout>
      <layout>
        <configItem>
-@@ -6897,18 +6901,66 @@
+@@ -6897,18 +6901,67 @@
            <iso639Id>wol</iso639Id>
          </languageList>
        </configItem>
@@ -124,6 +124,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
 -      <variantList/>
 +      <variantList />
 +    </layout>
++
 +    <layout>
 +      <configItem>
 +        <name>ci</name>
@@ -174,7 +175,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
      </layout>
    </layoutList>
  
-@@ -7267,19 +7319,22 @@
+@@ -7267,19 +7320,22 @@
        <option>
          <configItem>
            <name>lv3:caps_switch_latch</name>
@@ -200,7 +201,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
          </configItem>
        </option>
      </group>
-@@ -7354,7 +7409,8 @@
+@@ -7354,7 +7410,8 @@
            <name>ctrl:swap_lwin_lctl</name>
            <description>Swap Left Win with Left Ctrl</description>
          </configItem>
@@ -210,7 +211,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
          <configItem>
            <name>ctrl:swap_rwin_rctl</name>
            <description>Swap Right Win with Right Ctrl</description>
-@@ -7460,7 +7516,8 @@
+@@ -7460,7 +7517,8 @@
          </configItem>
        </option>
      </group>
@@ -220,7 +221,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
      <group allowMultipleSelection="false">
        <!-- Select a keypad KPDL variant -->
        <configItem>
-@@ -7579,7 +7636,8 @@
+@@ -7579,7 +7637,8 @@
        <option>
          <configItem>
            <name>caps:escape_shifted_capslock</name>
@@ -230,7 +231,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
          </configItem>
        </option>
        <option>
-@@ -8020,62 +8078,72 @@
+@@ -8020,62 +8079,72 @@
        <option>
          <configItem>
            <name>lv5:lsgt_switch_lock</name>
@@ -314,7 +315,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
          </configItem>
        </option>
  -->
-@@ -8125,7 +8193,8 @@
+@@ -8125,7 +8194,8 @@
        <option>
          <configItem>
            <name>nbsp:level4nl</name>
@@ -324,7 +325,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
          </configItem>
        </option>
        <option>
-@@ -8143,7 +8212,8 @@
+@@ -8143,7 +8213,8 @@
        <option>
          <configItem>
            <name>nbsp:zwnj2zwj3nb4</name>
@@ -334,7 +335,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
          </configItem>
        </option>
        <option>
-@@ -8155,13 +8225,15 @@
+@@ -8155,13 +8226,15 @@
        <option>
          <configItem>
            <name>nbsp:zwnj2nb3zwj4</name>
@@ -354,7 +355,7 @@ diff -uNr xkeyboard-config-20231112/rules/base.xml xkeyboard-config-20231112-ci/
        <option>
 diff -uNr xkeyboard-config-20231112/symbols/ci xkeyboard-config-20231112-ci/symbols/ci
 --- xkeyboard-config-20231112/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ xkeyboard-config-20231112-ci/symbols/ci	2023-11-12 12:37:46.801963905 +0000
++++ xkeyboard-config-20231112-ci/symbols/ci	2023-11-13 12:20:24.761972810 +0000
 @@ -0,0 +1,95 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
@@ -411,7 +412,7 @@ diff -uNr xkeyboard-config-20231112/symbols/ci xkeyboard-config-20231112-ci/symb
 +             key <AE06>	{ [     6,   question,       U0300 ]	};
 +
 +             // Second row
-+             key <AD03>	{ [	e,		E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
++             key <AD03>	{ [	e,    E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
 +             key <AD06>	{ [	y,		Y,		U01B4,		U01B3	] };	// U0272 =   (small), U019D =   (capital)
 +             key <AD08>	{ [	i,		I,		U0269,		U0196	] };	// U0272 =   (small), U0196 =   (capital)
 +             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
@@ -424,12 +425,12 @@ diff -uNr xkeyboard-config-20231112/symbols/ci xkeyboard-config-20231112-ci/symb
 +             key <AC11>	{ [    dead_grave,      dead_grave,     braceleft,      U2018 ]	};
 +
 +             // Fourth row
-+             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
-+             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
-+             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
-+             key <AB08>	{ [ comma, apostrophe,    U030C ]	}; // U030C = ̌
-+             key <AB09>	{ [ period, period,    dead_grave ]	}; // U0300 = grave combinator
-+             key <AB10>	{ [ eacute,  Eacute,   dead_acute ]	}; // U0301 = acute combinator
++             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };  // U028B = ʋ (small), U01B2 = Ʋ (capital)
++             key <AB05> { [	b,		B,		U0253,		U0181 ] };  // U0253 = ɓ (small), U0181 = Ɓ (capital)
++             key <AB06>	{ [	n,		N,		U0272,		U019D	] };  // U0272 = ɲ (small), U019D = Ɲ (capital)
++             key <AB08>	{ [ comma, apostrophe,    U030C ]	};  // U030C = ̌
++             key <AB09>	{ [ period, period,  U0300 ] }; // U0300 = grave combinator
++             key <AB10>	{ [ eacute, Eacute,  U0301 ] }; // U0301 = acute combinator
 +
 +             key <BKSL>	{ [ less,    greater,  braceright,  U2019 ]	};
 +
