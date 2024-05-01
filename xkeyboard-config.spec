@@ -6,9 +6,9 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.40
-Release:    11%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
-License:    MIT
+Version:    2.41
+Release:    1%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+License:    HPND AND HPND-sell-variant AND X11 AND X11-distribute-modifications-variant AND MIT AND MIT-open-group AND xkeyboard-config-Zinoviev
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
 %if 0%{?gitdate}
@@ -16,10 +16,10 @@ Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
+Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
 %endif
 
-Patch01: 0001-ci-f39.patch
+Patch01: 0001-ci-f40.patch
 
 BuildArch:  noarch
 
@@ -80,8 +80,17 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
-* Mon Nov 13 2023 Boyd Kelly <bkelly@coastsystems.net> - 2.40-11
-- xkeyboard-config 2.40
+* Wed May 01 2024 Boyd Kelly <bkelly@coastsystems.net> - 2.41-1.20110
+- xkeyboard-config-ci 2.41
+
+* Wed Feb 07 2024 Peter Hutterer <peter.hutterer@redhat.com> - 2.41-1
+- xkeyboard-config 2.41
+
+* Sat Jan 27 2024 Fedora Release Engineering <releng@fedoraproject.org> - 2.40-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
+
+* Wed Nov 29 2023 Peter Hutterer <peter.hutterer@redhat.com> - 2.40-2
+- SPDX migration
 
 * Fri Oct 13 2023 Peter Hutterer <peter.hutterer@redhat.com> - 2.40-1
 - xkeyboard-config 2.40
