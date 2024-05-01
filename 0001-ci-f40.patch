@@ -1,4 +1,5 @@
-diff -Nur xkeyboard-config-20240501/po/fr.po xkeyboard-config-20240501-ci/po/fr.po
+Binary files xkeyboard-config-20240501/.git/index and xkeyboard-config-20240501-ci/.git/index differ
+diff -uNr xkeyboard-config-20240501/po/fr.po xkeyboard-config-20240501-ci/po/fr.po
 --- xkeyboard-config-20240501/po/fr.po	2024-05-01 15:17:36.000000000 +0000
 +++ xkeyboard-config-20240501-ci/po/fr.po	2024-05-01 15:59:26.832523012 +0000
 @@ -4687,6 +4687,23 @@
@@ -25,7 +26,7 @@ diff -Nur xkeyboard-config-20240501/po/fr.po xkeyboard-config-20240501-ci/po/fr.
  #: rules/base.extras.xml:9
  msgid "xx"
  msgstr "xx"
-diff -Nur xkeyboard-config-20240501/rules/base.xml xkeyboard-config-20240501-ci/rules/base.xml
+diff -uNr xkeyboard-config-20240501/rules/base.xml xkeyboard-config-20240501-ci/rules/base.xml
 --- xkeyboard-config-20240501/rules/base.xml	2024-05-01 15:17:36.000000000 +0000
 +++ xkeyboard-config-20240501-ci/rules/base.xml	2024-05-01 15:42:59.613322215 +0000
 @@ -6870,6 +6870,55 @@
@@ -84,102 +85,102 @@ diff -Nur xkeyboard-config-20240501/rules/base.xml xkeyboard-config-20240501-ci/
    </layoutList>
  
    <optionList>
-diff -Nur xkeyboard-config-20240501/symbols/ci xkeyboard-config-20240501-ci/symbols/ci
---- xkeyboard-config-20240501/symbols/ci	2024-05-01 15:36:20.319246051 +0000
-+++ xkeyboard-config-20240501-ci/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-@@ -1,95 +0,0 @@
--default partial alphanumeric_keys
--xkb_symbols "basic" {
--    include "fr(azerty)"
--    include "level3(ralt_switch)" 
--    name[Group1]="French (Côte d'Ivoire)";
--
--};
--
--partial alphanumeric_keys
--xkb_symbols "civ" {
--    include "ci(basic)"
--    include "level3(ralt_switch)" 
--    include "ci(exclamation_switch)"
--    name[Group1]= "Côte d'Ivoire (Multilingual)";
--
--    	     // First row
--             key <TLDE>	{ [    asciitilde,     twosuperior,    U030C ]	};
--             key <AE02>	{ [    eacute,         2,   	 U0301,    oneeighth ]	};
--             key <AE04>	{ [    apostrophe,     4,        U2018,       braceleft ]	};
--             key <AE07>	{ [    egrave,         7,        U0300, seveneighths ]	};
--             key <AE12>	{ [    equal,       plus,   U2019,  braceright ]	};
--
--             // Second row
--             key <AD03>	{ [	e,		E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
--             key <AD06>	{ [	y,		Y,		U01B4,		U01B3	] };	// U0272 =   (small), U019D =   (capital)
--             key <AD07>	{ [	u,		U,		U028B,		U01B2	] };	// U0272 =   (small), U019D =   (capital)
--             key <AD08>	{ [	i,		I,		U0269,		U0196	] };	// U0272 =   (small), U0196 =   (capital)
--             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
--
--             // Third row
--	           key <AC02> { [ s, 		S, 		U00A7   ] };	// s, S, Section symbol 
--	           key <AC03> { [ d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
--             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
--             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
--
--             // Fourth row
--             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
--             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
--             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
--             key <AB07>	{ [	comma,		question,	U0242,		U0241	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
--
--};
--
--partial alphanumeric_keys
--xkb_symbols "civ_qw" {
--    include "ca(fr)"
--    include "level3(ralt_switch)" 
--    include "ci(semicolon_switch)"
--
--    name[Group1]= "Côte d'Ivoire (Qwerty multilingual)";
--
--             // First row
--             key <AE06>	{ [     6,   question,       U0300 ]	};
--
--             // Second row
--             key <AD03>	{ [	e,    E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
--             key <AD06>	{ [	y,		Y,		U01B4,		U01B3	] };	// U0272 =   (small), U019D =   (capital)
--             key <AD08>	{ [	i,		I,		U0269,		U0196	] };	// U0272 =   (small), U0196 =   (capital)
--             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
--
--             // Third row
--	           key <AC02> { [ s, 		S, 		U00A7   ] };	// s, S, Section symbol 
--      	     key <AC03> { [ d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
--             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
--             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
--             key <AC11>	{ [    dead_grave,      dead_grave,     braceleft,      U2018 ]	};
--
--             // Fourth row
--             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };  // U028B = ʋ (small), U01B2 = Ʋ (capital)
--             key <AB05> { [	b,		B,		U0253,		U0181 ] };  // U0253 = ɓ (small), U0181 = Ɓ (capital)
--             key <AB06>	{ [	n,		N,		U0272,		U019D	] };  // U0272 = ɲ (small), U019D = Ɲ (capital)
--             key <AB08>	{ [ comma, apostrophe,    U030C ]	};  // U030C = ̌
--             key <AB09>	{ [ period, period,  U0300 ] }; // U0300 = grave combinator
--             key <AB10>	{ [ eacute, Eacute,  U0301 ] }; // U0301 = acute combinator
--
--             key <BKSL>	{ [ less,    greater,  braceright,  U2019 ]	};
--
--};
--
--partial modifier_keys
--xkb_symbols "semicolon_switch" {
--    key <AC10> {
--    symbols[Group1] = [ ISO_Level3_Latch,	colon,	semicolon,	colon ] 
--    };
--    modifier_map Mod5	{ ISO_Level3_Latch };
--};
--
--partial modifier_keys
--xkb_symbols "exclamation_switch" {
--    key <AB10> {
--    symbols[Group1] = [ ISO_Level3_Latch,   U00A7,  exclam, U00A7 ]
--    };
--    modifier_map Mod5       { ISO_Level3_Latch };
--};
--
+diff -uNr xkeyboard-config-20240501/symbols/ci xkeyboard-config-20240501-ci/symbols/ci
+--- xkeyboard-config-20240501/symbols/ci	1970-01-01 00:00:00.000000000 +0000
++++ xkeyboard-config-20240501-ci/symbols/ci	2024-05-01 15:36:20.319246051 +0000
+@@ -0,0 +1,95 @@
++default partial alphanumeric_keys
++xkb_symbols "basic" {
++    include "fr(azerty)"
++    include "level3(ralt_switch)" 
++    name[Group1]="French (Côte d'Ivoire)";
++
++};
++
++partial alphanumeric_keys
++xkb_symbols "civ" {
++    include "ci(basic)"
++    include "level3(ralt_switch)" 
++    include "ci(exclamation_switch)"
++    name[Group1]= "Côte d'Ivoire (Multilingual)";
++
++    	     // First row
++             key <TLDE>	{ [    asciitilde,     twosuperior,    U030C ]	};
++             key <AE02>	{ [    eacute,         2,   	 U0301,    oneeighth ]	};
++             key <AE04>	{ [    apostrophe,     4,        U2018,       braceleft ]	};
++             key <AE07>	{ [    egrave,         7,        U0300, seveneighths ]	};
++             key <AE12>	{ [    equal,       plus,   U2019,  braceright ]	};
++
++             // Second row
++             key <AD03>	{ [	e,		E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
++             key <AD06>	{ [	y,		Y,		U01B4,		U01B3	] };	// U0272 =   (small), U019D =   (capital)
++             key <AD07>	{ [	u,		U,		U028B,		U01B2	] };	// U0272 =   (small), U019D =   (capital)
++             key <AD08>	{ [	i,		I,		U0269,		U0196	] };	// U0272 =   (small), U0196 =   (capital)
++             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
++
++             // Third row
++	           key <AC02> { [ s, 		S, 		U00A7   ] };	// s, S, Section symbol 
++	           key <AC03> { [ d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
++             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
++             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
++
++             // Fourth row
++             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };	// U028B = ʋ (small), U01B2 = Ʋ (capital)
++             key <AB05> { [	b,		B,		U0253,		U0181 	] };	// U0253 = ɓ (small), U0181 = Ɓ (capital)
++             key <AB06>	{ [	n,		N,		U0272,		U019D	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
++             key <AB07>	{ [	comma,		question,	U0242,		U0241	] };	// U0272 = ɲ (small), U019D = Ɲ (capital)
++
++};
++
++partial alphanumeric_keys
++xkb_symbols "civ_qw" {
++    include "ca(fr)"
++    include "level3(ralt_switch)" 
++    include "ci(semicolon_switch)"
++
++    name[Group1]= "Côte d'Ivoire (Qwerty multilingual)";
++
++             // First row
++             key <AE06>	{ [     6,   question,       U0300 ]	};
++
++             // Second row
++             key <AD03>	{ [	e,    E,		U025B,		U0190 	] };	// U025B = ɛ (small), U0190 = Ɛ (capital)
++             key <AD06>	{ [	y,		Y,		U01B4,		U01B3	] };	// U0272 =   (small), U019D =   (capital)
++             key <AD08>	{ [	i,		I,		U0269,		U0196	] };	// U0272 =   (small), U0196 =   (capital)
++             key <AD09>	{ [	o,		O,		U0254,		U0186 	] };	// U0254 = ɔ (small), U0186 = Ɔ (capital)
++
++             // Third row
++	           key <AC02> { [ s, 		S, 		U00A7   ] };	// s, S, Section symbol 
++      	     key <AC03> { [ d, 		D, 		U0257, 		U018A   ] };	// d, D, d WITH HOOK, D WITH HOOK
++             key <AC05>	{ [	g,		G,		U014B,		U014A 	] };	// U014B = ŋ (small), U014A = Ŋ (capital)
++             key <AC07>	{ [	j,		J,		U0292,		U01B7 	] };	// U025B =   (small), U0190 =   (capital)
++             key <AC11>	{ [    dead_grave,      dead_grave,     braceleft,      U2018 ]	};
++
++             // Fourth row
++             key <AB04>	{ [	v,		V,		U028B,		U01B2	] };  // U028B = ʋ (small), U01B2 = Ʋ (capital)
++             key <AB05> { [	b,		B,		U0253,		U0181 ] };  // U0253 = ɓ (small), U0181 = Ɓ (capital)
++             key <AB06>	{ [	n,		N,		U0272,		U019D	] };  // U0272 = ɲ (small), U019D = Ɲ (capital)
++             key <AB08>	{ [ comma, apostrophe,    U030C ]	};  // U030C = ̌
++             key <AB09>	{ [ period, period,  U0300 ] }; // U0300 = grave combinator
++             key <AB10>	{ [ eacute, Eacute,  U0301 ] }; // U0301 = acute combinator
++
++             key <BKSL>	{ [ less,    greater,  braceright,  U2019 ]	};
++
++};
++
++partial modifier_keys
++xkb_symbols "semicolon_switch" {
++    key <AC10> {
++    symbols[Group1] = [ ISO_Level3_Latch,	colon,	semicolon,	colon ] 
++    };
++    modifier_map Mod5	{ ISO_Level3_Latch };
++};
++
++partial modifier_keys
++xkb_symbols "exclamation_switch" {
++    key <AB10> {
++    symbols[Group1] = [ ISO_Level3_Latch,   U00A7,  exclam, U00A7 ]
++    };
++    modifier_map Mod5       { ISO_Level3_Latch };
++};
++
