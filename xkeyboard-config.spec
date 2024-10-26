@@ -6,20 +6,20 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.41
+Version:    2.42
 Release:    9%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    HPND AND HPND-sell-variant AND X11 AND X11-distribute-modifications-variant AND MIT AND MIT-open-group AND xkeyboard-config-Zinoviev
-URL:        https://www.freedesktop.org/wiki/Software/XKeyboardConfig
+URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
 %if 0%{?gitdate}
 Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
+Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
 %endif
 
-Patch01: 0001-ci-f40.patch
+Patch01: 0001-ci-f41.patch
 
 BuildArch:  noarch
 
@@ -80,8 +80,14 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
-* Wed May 01 2024 Boyd Kelly <bkelly@coastsystems.net> - 2.41-1.20110
-- xkeyboard-config-ci 2.41
+* Sat Oct 26 2024 Boyd Kelly <bkelly@coastsystems.net> - 2.42-2
+- xkeyboard-config-ci 
+
+* Sat Jul 20 2024 Fedora Release Engineering <releng@fedoraproject.org> - 2.42-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
+
+* Wed Jun 12 2024 Peter Hutterer <peter.hutterer@redhat.com> 2.42-1
+- xkeyboard-config 2.42
 
 * Wed Feb 07 2024 Peter Hutterer <peter.hutterer@redhat.com> - 2.41-1
 - xkeyboard-config 2.41

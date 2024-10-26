@@ -1,8 +1,16 @@
-Binary files xkeyboard-config-20240501/.git/index and xkeyboard-config-20240501-ci/.git/index differ
-diff -uNr xkeyboard-config-20240501/po/fr.po xkeyboard-config-20240501-ci/po/fr.po
---- xkeyboard-config-20240501/po/fr.po	2024-05-01 15:17:36.000000000 +0000
-+++ xkeyboard-config-20240501-ci/po/fr.po	2024-05-01 15:59:26.832523012 +0000
-@@ -4687,6 +4687,23 @@
+diff -uNr xkeyboard-config-2.42.orig/po/fr.po xkeyboard-config-2.42/po/fr.po
+--- xkeyboard-config-2.42.orig/po/fr.po	2024-06-07 18:37:21.000000000 +0000
++++ xkeyboard-config-2.42/po/fr.po	2024-10-26 16:05:57.137554663 +0000
+@@ -12,7 +12,7 @@
+ "Project-Id-Version: xkeyboard-config 2.41.99\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2024-05-24 14:40+0000\n"
+-"PO-Revision-Date: 2024-05-26 23:30+0200\n"
++"PO-Revision-Date: 2024-10-26 16:05+0000\n"
+ "Last-Translator: Jean-Philippe Guérard <jean-philippe.guerard@corbeaunoir.org>\n"
+ "Language-Team: French <traduc@traduc.org>\n"
+ "Language: fr\n"
+@@ -4691,6 +4691,24 @@
  msgid "Use user-defined custom XKB types"
  msgstr "Utiliser des types XKB utilisateur personnalisés"
  
@@ -23,17 +31,37 @@ diff -uNr xkeyboard-config-20240501/po/fr.po xkeyboard-config-20240501-ci/po/fr.
 +#: ../rules/base.xml.in.h:1120
 +msgid "Côte d'Ivoire Multilingual (QWERTY)"
 +msgstr "Côte d'Ivoire multilingue (qwerty)"
++
  #: rules/base.extras.xml:9
  msgid "xx"
  msgstr "xx"
-diff -uNr xkeyboard-config-20240501/rules/base.xml xkeyboard-config-20240501-ci/rules/base.xml
---- xkeyboard-config-20240501/rules/base.xml	2024-05-01 15:17:36.000000000 +0000
-+++ xkeyboard-config-20240501-ci/rules/base.xml	2024-05-01 15:42:59.613322215 +0000
-@@ -6870,6 +6870,55 @@
+diff -uNr xkeyboard-config-2.42.orig/rules/base.xml xkeyboard-config-2.42/rules/base.xml
+--- xkeyboard-config-2.42.orig/rules/base.xml	2024-06-07 18:37:21.000000000 +0000
++++ xkeyboard-config-2.42/rules/base.xml	2024-10-26 16:03:22.718531519 +0000
+@@ -785,7 +785,9 @@
+         <name>logii350</name>
+         <description>Logitech Internet 350</description>
+         <vendor>Logitech</vendor>
+-        <hwList> <hwId>046d:c313</hwId> </hwList>
++        <hwList>
++          <hwId>046d:c313</hwId>
++        </hwList>
+       </configItem>
+     </model>
+     <model>
+@@ -6873,7 +6875,7 @@
+     </layout>
+     <layout>
+       <configItem>
+-	<name>custom</name>
++        <name>custom</name>
+         <shortDescription>custom</shortDescription>
+         <description>A user-defined custom Layout</description>
+         <languageList>
+@@ -6882,6 +6884,54 @@
        </configItem>
        <variantList/>
      </layout>
-+
 +    <layout>
 +      <configItem>
 +        <name>ci</name>
@@ -85,9 +113,28 @@ diff -uNr xkeyboard-config-20240501/rules/base.xml xkeyboard-config-20240501-ci/
    </layoutList>
  
    <optionList>
-diff -uNr xkeyboard-config-20240501/symbols/ci xkeyboard-config-20240501-ci/symbols/ci
---- xkeyboard-config-20240501/symbols/ci	1970-01-01 00:00:00.000000000 +0000
-+++ xkeyboard-config-20240501-ci/symbols/ci	2024-05-01 15:36:20.319246051 +0000
+@@ -7312,7 +7362,7 @@
+       <option>
+         <configItem>
+           <name>ctrl:grouptoggle_capscontrol</name>
+-          <description>Caps Lock as Ctrl,  Left Control switches to another layout</description>
++          <description>Caps Lock as Ctrl, Left Control switches to another layout</description>
+         </configItem>
+       </option>
+       <option>
+@@ -7368,7 +7418,8 @@
+           <name>ctrl:swap_lwin_lctl</name>
+           <description>Swap Left Win with Left Ctrl</description>
+         </configItem>
+-      </option><option>
++      </option>
++      <option>
+         <configItem>
+           <name>ctrl:swap_rwin_rctl</name>
+           <description>Swap Right Win with Right Ctrl</description>
+diff -uNr xkeyboard-config-2.42.orig/symbols/ci xkeyboard-config-2.42/symbols/ci
+--- xkeyboard-config-2.42.orig/symbols/ci	1970-01-01 00:00:00.000000000 +0000
++++ xkeyboard-config-2.42/symbols/ci	2024-10-26 16:07:47.208996780 +0000
 @@ -0,0 +1,95 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
