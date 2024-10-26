@@ -23,7 +23,7 @@ Patch01: 0001-ci-f41.patch
 
 BuildArch:  noarch
 
-BuildRequires:  python >= 3.11
+BuildRequires:  python3 >= 3.11
 BuildRequires:  gettext gettext-devel
 BuildRequires:  meson
 BuildRequires:  libxslt
