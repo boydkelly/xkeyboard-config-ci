@@ -6,7 +6,7 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.42
+Version:    2.44
 Release:    9%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    HPND AND HPND-sell-variant AND X11 AND X11-distribute-modifications-variant AND MIT AND MIT-open-group AND xkeyboard-config-Zinoviev
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
@@ -19,11 +19,10 @@ Source2:    commitid
 Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
 %endif
 
-Patch01: 0001-ci-f41.patch
+Patch01: 0001-f42-ci.patch
 
 BuildArch:  noarch
 
-BuildRequires:  python3 >= 3.11
 BuildRequires:  gettext gettext-devel
 BuildRequires:  meson
 BuildRequires:  libxslt
@@ -71,7 +70,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 }
 
 %files -f files.list -f %{name}.lang
-%doc AUTHORS README NEWS COPYING docs/README.* docs/HOWTO.*
+%doc AUTHORS README.md COPYING docs/README.* docs/HOWTO.*
 %{_mandir}/man7/xkeyboard-config.*
 %{_datadir}/X11/xkb/rules/xorg
 %{_datadir}/X11/xkb/rules/xorg.lst
@@ -81,8 +80,17 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 %{_datadir}/pkgconfig/xkeyboard-config.pc
 
 %changelog
-* Sat Oct 26 2024 Boyd Kelly <bkelly@coastsystems.net> - 2.42-2
-- xkeyboard-config-ci
+* Wed Mar 26 2025 Boyd Kelly <bkelly@coastsystems.net> 2.44-9
+- xkeyboard-config 2.44
+
+* Mon Feb 10 2025 Peter Hutterer <peter.hutterer@redhat.com> 2.44-1
+- xkeyboard-config 2.44
+
+* Sun Jan 19 2025 Fedora Release Engineering <releng@fedoraproject.org> - 2.43-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_42_Mass_Rebuild
+
+* Thu Oct 03 2024 Peter Hutterer <peter.hutterer@redhat.com> - 2.43-1git}
+- xkeyboard-config 2.43
 
 * Sat Jul 20 2024 Fedora Release Engineering <releng@fedoraproject.org> - 2.42-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
@@ -321,7 +329,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 
 * Wed Nov 14 2012 Peter Hutterer <peter.hutterer@redhat.com> - 2.7-3
 - Rebuild with fixed xkbcomp, re-create the right directory listing (not
-that anyone actually uses it)
+  that anyone actually uses it)
 
 * Wed Oct 31 2012 Peter Hutterer <peter.hutterer@redhat.com> - 2.7-2
 - Fix {?dist} tag
@@ -351,7 +359,7 @@ that anyone actually uses it)
 
 * Thu Jan 19 2012 Peter Hutterer <peter.hutterer@redhat.com> 2.4.1-4
 - Move Ungrab and ClearGrab from the default layout to option
-grab:break_actions (#783044)
+  grab:break_actions (#783044)
 
 * Sat Jan 14 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.4.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
@@ -362,11 +370,11 @@ grab:break_actions (#783044)
 * Wed Oct 05 2011 Peter Hutterer <peter.hutterer@redhat.com> 2.4.1-1
 - xkeyboard-config 2.4.1
 - change source URL from ftp.x.org to http://xorg.freedesktop.org, ftp takes
-too long to update
+  too long to update
 
 * Tue Jun 14 2011 Peter Hutterer <peter.hutterer@redhat.com> 2.3-2
 - Add 0001-Use-XSL-to-generate-man-page-from-the-rules-XML.patch, ship
-man-page
+  man-page
 - Fix up broken git repo initialization when building from a tarball
 
 * Thu Jun 02 2011 Peter Hutterer <peter.hutterer@redhat.com> 2.3-1

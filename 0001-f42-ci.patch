@@ -1,0 +1,89 @@
+diff -ru xkeyboard-config-20250326/po/fr.po xkeyboard-config-20250326-ci/po/fr.po
+--- xkeyboard-config-20250326/po/fr.po	2025-03-26 13:59:42.000000000 +0000
++++ xkeyboard-config-20250326-ci/po/fr.po	2025-03-26 14:07:10.193986592 +0000
+@@ -4745,6 +4745,24 @@
+ msgid "Use user-defined custom XKB types"
+ msgstr "Utiliser des types XKB utilisateur personnalisés"
+ 
++#. Keyboard indicator for Côte d'Ivoire layouts
++#: ../rules/base.xml.in.h:377 ../rules/base.extras.xml.in.h:1117
++msgid "ci"
++msgstr "ci"
++
++# https://secure.wikimedia.org/wikipedia/fr/wiki/Côte d'Ivoire
++#: ../rules/base.xml.in.h:1118
++msgid "French (Côte d'Ivoire)"
++msgstr "Français (Côte d'Ivoire)"
++
++#: ../rules/base.xml.in.h:1119
++msgid "Côte d'Ivoire Multilingual"
++msgstr "Côte d'Ivoire multilingue"
++
++#: ../rules/base.xml.in.h:1120
++msgid "Côte d'Ivoire Multilingual (QWERTY)"
++msgstr "Côte d'Ivoire multilingue (qwerty)"
++
+ #: rules/base.extras.xml:9
+ msgid "xx"
+ msgstr "xx"
+diff -ru xkeyboard-config-20250326/rules/base.xml xkeyboard-config-20250326-ci/rules/base.xml
+--- xkeyboard-config-20250326/rules/base.xml	2025-03-26 13:59:42.000000000 +0000
++++ xkeyboard-config-20250326-ci/rules/base.xml	2025-03-26 14:04:40.020996447 +0000
+@@ -6894,14 +6894,51 @@
+     </layout>
+     <layout>
+       <configItem>
+-	<name>custom</name>
+-        <shortDescription>custom</shortDescription>
+-        <description>A user-defined custom Layout</description>
++        <name>ci</name>
++        <shortDescription>ci</shortDescription>
++        <description>French (Côte d'Ivoire)</description>
+         <languageList>
+-          <iso639Id>und</iso639Id>
++          <iso639Id>fra</iso639Id>
+         </languageList>
+       </configItem>
+-      <variantList/>
++      <variantList>
++        <variant>
++          <configItem>
++            <name>civ</name>
++            <shortDescription>civ</shortDescription>
++            <description>Côte d'Ivoire, Multilingual</description>
++            <languageList>
++              <iso639Id>ata</iso639Id>
++              <iso639Id>ati</iso639Id>
++              <iso639Id>bm</iso639Id>
++              <iso639Id>bci</iso639Id>
++              <iso639Id>btg</iso639Id>
++              <iso639Id>dyu</iso639Id>
++              <iso639Id>fra</iso639Id>
++              <iso639Id>gxx</iso639Id>
++              <iso639Id>sef</iso639Id>
++            </languageList>
++          </configItem>
++        </variant>
++        <variant>
++          <configItem>
++            <name>civ_qw</name>
++            <shortDescription>ciq</shortDescription>
++            <description>Côte d'Ivoire, (Qwerty)</description>
++            <languageList>
++              <iso639Id>ata</iso639Id>
++              <iso639Id>ati</iso639Id>
++              <iso639Id>bm</iso639Id>
++              <iso639Id>bci</iso639Id>
++              <iso639Id>btg</iso639Id>
++              <iso639Id>dyu</iso639Id>
++              <iso639Id>fra</iso639Id>
++              <iso639Id>gxx</iso639Id>
++              <iso639Id>sef</iso639Id>
++            </languageList>
++          </configItem>
++        </variant>
++      </variantList>
+     </layout>
+   </layoutList>
+ 
+Only in xkeyboard-config-20250326-ci/symbols: ci
