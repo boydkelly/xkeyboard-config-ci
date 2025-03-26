@@ -82,7 +82,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 
 %changelog
 * Sat Oct 26 2024 Boyd Kelly <bkelly@coastsystems.net> - 2.42-2
-- xkeyboard-config-ci 
+- xkeyboard-config-ci
 
 * Sat Jul 20 2024 Fedora Release Engineering <releng@fedoraproject.org> - 2.42-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
@@ -321,7 +321,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 
 * Wed Nov 14 2012 Peter Hutterer <peter.hutterer@redhat.com> - 2.7-3
 - Rebuild with fixed xkbcomp, re-create the right directory listing (not
-  that anyone actually uses it)
+that anyone actually uses it)
 
 * Wed Oct 31 2012 Peter Hutterer <peter.hutterer@redhat.com> - 2.7-2
 - Fix {?dist} tag
@@ -351,7 +351,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 
 * Thu Jan 19 2012 Peter Hutterer <peter.hutterer@redhat.com> 2.4.1-4
 - Move Ungrab and ClearGrab from the default layout to option
-  grab:break_actions (#783044)
+grab:break_actions (#783044)
 
 * Sat Jan 14 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.4.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
@@ -362,11 +362,11 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/X11/xkb/compiled
 * Wed Oct 05 2011 Peter Hutterer <peter.hutterer@redhat.com> 2.4.1-1
 - xkeyboard-config 2.4.1
 - change source URL from ftp.x.org to http://xorg.freedesktop.org, ftp takes
-  too long to update
+too long to update
 
 * Tue Jun 14 2011 Peter Hutterer <peter.hutterer@redhat.com> 2.3-2
 - Add 0001-Use-XSL-to-generate-man-page-from-the-rules-XML.patch, ship
-  man-page
+man-page
 - Fix up broken git repo initialization when building from a tarball
 
 * Thu Jun 02 2011 Peter Hutterer <peter.hutterer@redhat.com> 2.3-1
