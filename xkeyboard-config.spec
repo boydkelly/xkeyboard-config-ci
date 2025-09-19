@@ -37,7 +37,7 @@ BuildRequires:  pkgconfig(xorg-macros) >= 1.12
 BuildRequires:  pkgconfig(xproto) >= 7.0.20
 BuildRequires:  xkbcomp
 BuildRequires:  git-core
-BuildRequires:  python3-strenum
+BuildRequires:  python3dist(strenum)
 
 %description
 This package contains configuration data used by the X Keyboard Extension (XKB),
