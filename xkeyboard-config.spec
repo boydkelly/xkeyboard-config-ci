@@ -39,6 +39,7 @@ BuildRequires:  xkbcomp
 BuildRequires:  git-core
 %if 0%{!?fedora}
 BuildRequires: python3dist(strenum)
+BuildRequires: python3-pip
 %endif
 
 %description
@@ -57,6 +58,11 @@ Development files for %{name}.
 %autosetup -S git
 
 %build
+# For non-Fedora, install Meson >=0.61 via pip
+%if 0%{!?fedora}
+%{__python3} -m pip install --user "meson>=0.61"
+export PATH=$HOME/.local/bin:$PATH
+%endif
 %meson -Dcompat-rules=true -Dxorg-rules-symlinks=true
 %meson_build
 
