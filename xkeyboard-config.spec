@@ -11,7 +11,7 @@
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
 Version:    2.45
-Release:    9%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Release:    11%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    HPND AND HPND-sell-variant AND X11 AND X11-distribute-modifications-variant AND MIT AND MIT-open-group AND xkeyboard-config-Zinoviev
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
@@ -20,10 +20,8 @@ Source0:    %{name}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
+Source0:    http://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
 %endif
-
-Patch01: 0001-f43-ci.patch
 
 BuildArch:  noarch
 
@@ -37,7 +35,6 @@ BuildRequires:  pkgconfig(xorg-macros) >= 1.12
 BuildRequires:  pkgconfig(xproto) >= 7.0.20
 BuildRequires:  xkbcomp
 BuildRequires:  git-core
-BuildRequires:  python3dist(strenum)
 
 %description
 This package contains configuration data used by the X Keyboard Extension (XKB),
@@ -107,8 +104,9 @@ end
 %{_datadir}/pkgconfig/%{name}.pc
 
 %changelog
-* Fri Sep 19 2025 Boyd Kelly <bkelly@coastsystems.net> - 2.45-9
-- xkeyboard-config add ci layouts
+* Tue Sep 23 2025 Boyd Kelly <bkelly@coastsystems.net> - 2.45-11
+- xkeyboard-config 2.45
+  Add ci layouts
 
 * Thu Aug 07 2025 Peter Hutterer <peter.hutterer@redhat.com> - 2.45-1
 - xkeyboard-config 2.45
