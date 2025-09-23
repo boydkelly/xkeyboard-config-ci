@@ -11,7 +11,7 @@
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
 Version:    2.45
-Release:    11%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Release:    12%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    HPND AND HPND-sell-variant AND X11 AND X11-distribute-modifications-variant AND MIT AND MIT-open-group AND xkeyboard-config-Zinoviev
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
@@ -106,7 +106,7 @@ end
 %{_datadir}/pkgconfig/%{name}.pc
 
 %changelog
-* Tue Sep 23 2025 Boyd Kelly <bkelly@coastsystems.net> - 2.45-11
+* Tue Sep 23 2025 Boyd Kelly <bkelly@coastsystems.net> - 2.45-12
 - xkeyboard-config 2.45
   Add ci layouts
 
