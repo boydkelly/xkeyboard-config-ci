@@ -10,10 +10,10 @@
 
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
-Version:    2.45
-Release:    9%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Version:    2.46
+Release:    5%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License:    HPND AND HPND-sell-variant AND X11 AND X11-distribute-modifications-variant AND MIT AND MIT-open-group AND xkeyboard-config-Zinoviev
-URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
+URL:        https://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
 %if 0%{?gitdate}
 Source0:    %{name}-%{gitdate}.tar.bz2
@@ -23,7 +23,7 @@ Source2:    commitid
 Source0:    https://xorg.freedesktop.org/archive/individual/data/%{name}/%{name}-%{version}.tar.xz
 %endif
 
-Patch01: 0001-f43-ci.patch
+Patch01: 0002-f43-ci.patch
 
 BuildArch:  noarch
 
@@ -37,10 +37,6 @@ BuildRequires:  pkgconfig(xorg-macros) >= 1.12
 BuildRequires:  pkgconfig(xproto) >= 7.0.20
 BuildRequires:  xkbcomp
 BuildRequires:  git-core
-%if 0%{!?fedora}
-BuildRequires: python3dist(strenum)
-BuildRequires: python3-pip
-%endif
 
 %description
 This package contains configuration data used by the X Keyboard Extension (XKB),
@@ -58,11 +54,6 @@ Development files for %{name}.
 %autosetup -S git
 
 %build
-# For non-Fedora, install Meson >=0.61 via pip
-%if 0%{!?fedora}
-%{__python3} -m pip install --user "meson>=0.61"
-export PATH=$HOME/.local/bin:$PATH
-%endif
 %meson -Dcompat-rules=true -Dxorg-rules-symlinks=true
 %meson_build
 
@@ -115,8 +106,12 @@ end
 %{_datadir}/pkgconfig/%{name}.pc
 
 %changelog
-* Fri Sep 19 2025 Boyd Kelly <bkelly@coastsystems.net> - 2.45-9
-- xkeyboard-config add ci layouts
+* Sun Oct 19 2025 Boyd Kelly <bkelly@coastsystems.net> - 2.46-5
+- xkeyboard-config 2.46
+  Add ci layout
+
+* Thu Oct 09 2025 Peter Hutterer <peter.hutterer@redhat.com> - 2.46-1
+- xkeyboard-config 2.46
 
 * Thu Aug 07 2025 Peter Hutterer <peter.hutterer@redhat.com> - 2.45-1
 - xkeyboard-config 2.45
