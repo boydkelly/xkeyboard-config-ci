@@ -1,7 +1,7 @@
-diff --git a/a/po/fr.po b/b/po/fr.po
+diff --git a/po/fr.po b/po/fr.po
 index 46eee4e..084e70f 100644
---- a/a/po/fr.po
-+++ b/b/po/fr.po
+--- a/po/fr.po
++++ b/po/fr.po
 @@ -4791,6 +4791,24 @@ msgstr "Options diverses"
  msgid "Use user-defined custom XKB types"
  msgstr "Utiliser des types XKB utilisateur personnalisés"
@@ -27,10 +27,10 @@ index 46eee4e..084e70f 100644
  #: rules/base.extras.xml:9
  msgid "xx"
  msgstr "xx"
-diff --git a/a/rules/base.xml b/b/rules/base.xml
+diff --git a/rules/base.xml b/rules/base.xml
 index e7f173c..90de484 100644
---- a/a/rules/base.xml
-+++ b/b/rules/base.xml
+--- a/rules/base.xml
++++ b/rules/base.xml
 @@ -6950,6 +6950,54 @@
        </configItem>
        <variantList/>
@@ -86,12 +86,12 @@ index e7f173c..90de484 100644
      <layout>
        <configItem>
  	<name>custom</name>
-diff --git a/b/symbols/ci b/b/symbols/ci
+diff --git a/symbols/ci b/symbols/ci
 new file mode 100644
-index 0000000..3563ee4
+index 0000000..6974f6f
 --- /dev/null
-+++ b/b/symbols/ci
-@@ -0,0 +1,94 @@
++++ b/symbols/ci
+@@ -0,0 +1,92 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
 +    include "fr(azerty)"
