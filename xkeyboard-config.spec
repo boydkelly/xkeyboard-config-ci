@@ -11,7 +11,7 @@
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
 Version:    2.48
-Release:    9%{?dist}
+Release:    10%{?dist}
 License:    HPND AND HPND-sell-variant AND X11 AND X11-distribute-modifications-variant AND MIT AND MIT-open-group AND xkeyboard-config-Zinoviev
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
@@ -107,10 +107,15 @@ end
 %{_datadir}/pkgconfig/%{name}.pc
 
 %changelog
+* Sun Aug 02 2026 Boyd Kelly <bkelly@coastsystems.net> - 2.48-10
+- xkeyboard-config 2.48
+  Rebuilt with updated ci (Côte d'Ivoire) layouts; Release 6
+
 * Wed Jul 29 2026 Boyd Kelly <bkelly@coastsystems.net> - 2.48-9
 - xkeyboard-config 2.48
   Rebuilt with ci (Côte d'Ivoire) layouts; Release 9 to supersede Fedora
-  Fix symbols/ci: drop invalid '*' in civ <AC12
+  Fix symbols/ci: drop invalid '*' in civ <AC12> (built on Fedora, failed
+  on Ubuntu); synced with xkb-data-ci
 
 * Wed Mar 04 2026 Boyd Kelly <bkelly@coastsystems.net> - 2.47-5
 - xkeyboard-config 2.47
