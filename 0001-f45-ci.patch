@@ -1,8 +1,7 @@
-diff --git a/po/fr.po b/po/fr.po
-index 46eee4e..084e70f 100644
---- a/po/fr.po
-+++ b/po/fr.po
-@@ -4791,6 +4791,24 @@ msgstr "Options diverses"
+diff -Naur xkeyboard-config-2.48.orig/po/fr.po xkeyboard-config-2.48/po/fr.po
+--- xkeyboard-config-2.48.orig/po/fr.po	2026-06-21 00:53:29.000000000 +0000
++++ xkeyboard-config-2.48/po/fr.po	2026-08-07 11:40:41.564951284 +0000
+@@ -4791,6 +4791,24 @@
  msgid "Use user-defined custom XKB types"
  msgstr "Utiliser des types XKB utilisateur personnalisés"
  
@@ -27,16 +26,13 @@ index 46eee4e..084e70f 100644
  #: rules/base.extras.xml:9
  msgid "xx"
  msgstr "xx"
-diff --git a/rules/base.xml b/rules/base.xml
-index e7f173c..90de484 100644
---- a/rules/base.xml
-+++ b/rules/base.xml
-@@ -6950,6 +6950,54 @@
-       </configItem>
-       <variantList/>
+diff -Naur xkeyboard-config-2.48.orig/rules/base.xml xkeyboard-config-2.48/rules/base.xml
+--- xkeyboard-config-2.48.orig/rules/base.xml	2026-06-21 00:53:29.000000000 +0000
++++ xkeyboard-config-2.48/rules/base.xml	2026-08-07 11:40:41.565960890 +0000
+@@ -6952,6 +6952,54 @@
      </layout>
-+    <layout>
-+      <configItem>
+     <layout>
+       <configItem>
 +        <name>ci</name>
 +        <shortDescription>ci</shortDescription>
 +        <description>French (Côte d'Ivoire)</description>
@@ -83,15 +79,15 @@ index e7f173c..90de484 100644
 +        </variant>
 +      </variantList>
 +    </layout>
-     <layout>
-       <configItem>
++    <layout>
++      <configItem>
  	<name>custom</name>
-diff --git a/symbols/ci b/symbols/ci
-new file mode 100644
-index 0000000..6974f6f
---- /dev/null
-+++ b/symbols/ci
-@@ -0,0 +1,92 @@
+         <shortDescription>custom</shortDescription>
+         <description>A user-defined custom Layout</description>
+diff -Naur xkeyboard-config-2.48.orig/symbols/ci xkeyboard-config-2.48/symbols/ci
+--- xkeyboard-config-2.48.orig/symbols/ci	1970-01-01 00:00:00.000000000 +0000
++++ xkeyboard-config-2.48/symbols/ci	2026-08-07 11:40:18.936066437 +0000
+@@ -0,0 +1,94 @@
 +default partial alphanumeric_keys
 +xkb_symbols "basic" {
 +    include "fr(azerty)"
@@ -112,7 +108,7 @@ index 0000000..6974f6f
 +             key <AE02>  { [ eacute,      2,            U0301,  oneeighth    ] };
 +             key <AE04>  { [ apostrophe,  4,            U2018,  braceleft    ] };
 +             key <AE07>  { [ egrave,      7,            U0300,  seveneighths ] };
-+             key <AE0à>  { [ ccedilla,    9,            U0304 ] }; // U0304 macron combining
++             key <AE09>  { [ ccedilla,    9,            U0304 ] }; // U0304 macron combining
 +             key <AE12>  { [ equal,       plus,         U2019,  braceright ] };
 +
 +             // Second row
@@ -152,7 +148,7 @@ index 0000000..6974f6f
 +             key <AD06>  { [ y,                Y,      U01B4,    U01B3  ] };  //
 +             key <AD08>  { [ i,                I,      U0269,    U0196  ] };  //
 +             key <AD09>  { [ o,                O,      U0254,    U0186 ] };  // U0254 = ɔ (small), U0186 = Ɔ (capital)
-+             key <AD011> { [ dead_circomflex,  U0304,  bracketleft ] };  // U0304 = macron combining
++             key <AD11> { [ dead_circomflex,  U0304,  bracketleft ] };  // U0304 = macron combining
 +
 +             // Third row
 +             key <AC02>  { [ s,     S,      U00A7        ] };  // s, S, Section symbol
