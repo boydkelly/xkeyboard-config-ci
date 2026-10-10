@@ -8,7 +8,7 @@
 Summary:    X Keyboard Extension configuration data
 Name:       xkeyboard-config
 Version:    2.48
-Release:    13%{?dist}
+Release:    14%{?dist}
 License:    HPND AND HPND-sell-variant AND X11 AND X11-distribute-modifications-variant AND MIT AND MIT-open-group AND xkeyboard-config-Zinoviev
 URL:        http://www.freedesktop.org/wiki/Software/XKeyboardConfig
 
@@ -41,7 +41,7 @@ Requires:   pkgconfig
 Development files for %{name}.
 
 %prep
-%autosetup -S git
+%autosetup -p1
 
 %build
 %meson -Dcompat-rules=true -Dxorg-rules-symlinks=true
@@ -89,6 +89,10 @@ end
 %{_datadir}/pkgconfig/%{name}.pc
 
 %changelog
+* Sat Oct 10 2026 Boyd Kelly <bkelly@coastsystems.net> - 2.48-14
+- xkeyboard-config 2.48
+  Rebuilt with autosetup -p1
+
 * Fri Aug 07 2026 Boyd Kelly <bkelly@coastsystems.net> - 2.48-13
 - xkeyboard-config 2.48
   Rebuilt with syntax fixes in custom ci (Côte d'Ivoire) layouts (corrected AE09 and AD11 keys)
